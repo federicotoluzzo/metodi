@@ -11,7 +11,8 @@ public class Main {
         //System.out.println(multiples(5, 10));
         //hundred();
         //System.out.println(between(5, 10, 5));
-        System.out.println(recursiveMultiples(5, 10));
+        //System.out.println(recursiveMultiples(5, 10));
+        //System.out.println(recursiveBetween(5, 10, 5));
     }
 
     public static void count(int n, int m) {
@@ -109,5 +110,18 @@ public class Main {
             }
         }
         return sum;
+    }
+
+    public static int recursiveBetween(int h, int k, int n){
+        if(n == 0){
+            return 0;
+        }
+        Scanner sc = new Scanner(System.in);
+        int val;
+        val = sc.nextInt();
+        if(val > h && val < k){
+            return recursiveBetween(h, k, n - 1) + 1;
+        }
+        return recursiveBetween(h, k, n - 1);
     }
 }
