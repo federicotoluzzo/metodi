@@ -12,6 +12,4 @@ public class Main {
             count(n + 1, m);
         }
     }
-
-
 }
