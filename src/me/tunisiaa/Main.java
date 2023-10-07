@@ -41,4 +41,21 @@ public class Main {
         }
         return recursiveCMD(n - 1);
     }
+
+//    Progettare un algoritmo che, dato un valore nu-
+//    merico k, legga n numeri e conti quanti di questi
+//    sono multipli di k scrivendo il risultato.
+
+    public static int multiples(int k, int n){
+        Scanner sc = new Scanner(System.in);
+        int val;
+        int multiples = 0;
+        for(int i = 0; i < n; i++){
+            val = sc.nextInt();
+            if(val % k == 0){
+                multiples++;
+            }
+        }
+        return multiples;
+    }
 }
