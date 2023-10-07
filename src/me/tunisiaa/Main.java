@@ -10,7 +10,8 @@ public class Main {
         //System.out.println(recursiveCMD(5));
         //System.out.println(multiples(5, 10));
         //hundred();
-        System.out.println(between(5, 10, 5));
+        //System.out.println(between(5, 10, 5));
+        System.out.println(recursiveMultiples(5, 10));
     }
 
     public static void count(int n, int m) {
@@ -61,6 +62,16 @@ public class Main {
             }
         }
         return multiples;
+    }
+
+    public static int recursiveMultiples(int k, int n){
+        if(n == 0){
+            return 0;
+        }
+        Scanner sc = new Scanner(System.in);
+        int val;
+        val = sc.nextInt();
+        return ((val % k == 0) ? 1 : 0) + recursiveMultiples(k, n - 1);
     }
 
 //    Esercizio 10
