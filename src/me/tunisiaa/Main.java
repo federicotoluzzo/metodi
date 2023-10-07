@@ -9,7 +9,8 @@ public class Main {
         //System.out.println(cmd(5));
         //System.out.println(recursiveCMD(5));
         //System.out.println(multiples(5, 10));
-        hundred();
+        //hundred();
+        System.out.println(between(5, 10, 5));
     }
 
     public static void count(int n, int m) {
@@ -88,8 +89,14 @@ public class Main {
 */
     public static int between(int h, int k, int n){
         Scanner sc = new Scanner(System.in);
+        int sum = 0;
+        int val;
         for(int i = 0; i < n; i++){
-
+            val = sc.nextInt();
+            if(val > h && val < k){
+                sum++;
+            }
         }
+        return sum;
     }
 }
