@@ -13,7 +13,7 @@ public class Main {
         //System.out.println(between(5, 10, 5));
         //System.out.println(recursiveMultiples(5, 10));
         //System.out.println(recursiveBetween(5, 10, 5));
-        System.out.println(popolazione(1990, 6000000000L, 1.01, 2023));
+        System.out.println(popolazione(2000, 6000000000L, 1.01, 2023));
     }
 
     public static void count(int n, int m) {
