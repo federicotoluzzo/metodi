@@ -124,4 +124,22 @@ public class Main {
         }
         return recursiveBetween(h, k, n - 1);
     }
+
+//    L'accrescimento della popolazione umana è gui-
+//    dato da una semplice legge matematica: l'incre-
+//    mento della popolazione tra un anno e il succes-
+//    sivo è dato dal prodotto di una costante (il tasso
+//di accrescimento) per la dimensione della popo-
+//    lazione. Realizzare l'algoritmo che consente di
+//    simulare anno per anno i valori della dimensione
+//    della popolazione a partire da:
+//            • l'anno iniziale della simulazione;
+//            • il valore della dimensione iniziale della popolazione;
+//            • il valore del tasso di accrescimento;
+//            • l'anno finale della simulazione.
+
+    public static int popolazione(){
+
+    }
 }
+
