@@ -147,4 +147,12 @@ public class Main {
         }
         return popolazioneFinale;
     }
+
+    public static long recursivePopolazione(int annoIniziale, long popolazioneIniziale, double k, int annoFinale) {
+        long popolazioneFinale = popolazioneIniziale;
+        if(annoIniziale == annoFinale){
+            return popolazioneFinale;
+        }
+        return (long) recursivePopolazione(annoIniziale + 1, popolazioneIniziale, k, annoFinale)*k;
+    }
 }
