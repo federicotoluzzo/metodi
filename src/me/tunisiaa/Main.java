@@ -13,7 +13,7 @@ public class Main {
         //System.out.println(between(5, 10, 5));
         //System.out.println(recursiveMultiples(5, 10));
         //System.out.println(recursiveBetween(5, 10, 5));
-        System.out.println(popolazione(1990, 600000000, 1.1, 2023));
+        System.out.println(popolazione(1990, 6000000000L, 1.01, 2023));
     }
 
     public static void count(int n, int m) {
@@ -139,8 +139,8 @@ public class Main {
 //            • il valore del tasso di accrescimento;
 //            • l'anno finale della simulazione.
 
-    public static int popolazione(int annoIniziale, int popolazioneIniziale, double k, int annoFinale) {
-        int popolazioneFinale = popolazioneIniziale;
+    public static long popolazione(int annoIniziale, long popolazioneIniziale, double k, int annoFinale) {
+        long popolazioneFinale = popolazioneIniziale;
         int deltaTime = annoFinale - annoIniziale;
         for(int i = 0; i < deltaTime; i++){
             popolazioneFinale *= k;
