@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	    //count(1, 15);
+        //count(1, 15);
         //System.out.println(cmd(5));
         //System.out.println(recursiveCMD(5));
         //System.out.println(multiples(5, 10));
@@ -13,35 +13,36 @@ public class Main {
         //System.out.println(between(5, 10, 5));
         //System.out.println(recursiveMultiples(5, 10));
         //System.out.println(recursiveBetween(5, 10, 5));
+        System.out.println(popolazione(1990, 600000000, 1.1, 2023));
     }
 
     public static void count(int n, int m) {
         System.out.println(n);
-        if(n != m){
+        if (n != m) {
             count(n + 1, m);
         }
     }
 
-    public static boolean cmd(int n){
+    public static boolean cmd(int n) {
         String val;
         Scanner sc = new Scanner(System.in);
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             val = sc.nextLine();
-            if(val.equals("exit")){
+            if (val.equals("exit")) {
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean recursiveCMD(int n){
-        if(n == 0){
+    public static boolean recursiveCMD(int n) {
+        if (n == 0) {
             return false;
         }
         String val;
         Scanner sc = new Scanner(System.in);
         val = sc.nextLine();
-        if(val.equals("exit")){
+        if (val.equals("exit")) {
             return true;
         }
         return recursiveCMD(n - 1);
@@ -52,21 +53,21 @@ public class Main {
 //    merico k, legga n numeri e conti quanti di questi
 //    sono multipli di k scrivendo il risultato.
 
-    public static int multiples(int k, int n){
+    public static int multiples(int k, int n) {
         Scanner sc = new Scanner(System.in);
         int val;
         int multiples = 0;
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             val = sc.nextInt();
-            if(val % k == 0){
+            if (val % k == 0) {
                 multiples++;
             }
         }
         return multiples;
     }
 
-    public static int recursiveMultiples(int k, int n){
-        if(n == 0){
+    public static int recursiveMultiples(int k, int n) {
+        if (n == 0) {
             return 0;
         }
         Scanner sc = new Scanner(System.in);
@@ -81,12 +82,12 @@ public class Main {
 //    nore di 100 e scriva la somma ottenuta e quanti
 //    sono i valori letti.
 
-    public static void hundred(){
+    public static void hundred() {
         int val = 0;
         int sum = 0;
         int i = 0;
         Scanner sc = new Scanner(System.in);
-        while(sum + val < 100){
+        while (sum + val < 100) {
             sum += val;
             val = sc.nextInt();
             i++;
@@ -94,32 +95,32 @@ public class Main {
         System.out.println("The sum of the " + (i - 1) + " numbers given is " + sum);
     }
 
-/*  Esercizio 11
-    I Progettare un algoritmo che, dati due valori nu-
-    merici h e k, legga n valori e conti quanti di essi
-    sono compresi tra h e k scrivendo il risultato.
-*/
-    public static int between(int h, int k, int n){
+    /*  Esercizio 11
+        I Progettare un algoritmo che, dati due valori nu-
+        merici h e k, legga n valori e conti quanti di essi
+        sono compresi tra h e k scrivendo il risultato.
+    */
+    public static int between(int h, int k, int n) {
         Scanner sc = new Scanner(System.in);
         int sum = 0;
         int val;
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             val = sc.nextInt();
-            if(val > h && val < k){
+            if (val > h && val < k) {
                 sum++;
             }
         }
         return sum;
     }
 
-    public static int recursiveBetween(int h, int k, int n){
-        if(n == 0){
+    public static int recursiveBetween(int h, int k, int n) {
+        if (n == 0) {
             return 0;
         }
         Scanner sc = new Scanner(System.in);
         int val;
         val = sc.nextInt();
-        if(val > h && val < k){
+        if (val > h && val < k) {
             return recursiveBetween(h, k, n - 1) + 1;
         }
         return recursiveBetween(h, k, n - 1);
@@ -138,8 +139,12 @@ public class Main {
 //            • il valore del tasso di accrescimento;
 //            • l'anno finale della simulazione.
 
-    public static int popolazione(){
-
+    public static int popolazione(int annoIniziale, int popolazioneIniziale, double k, int annoFinale) {
+        int popolazioneFinale = popolazioneIniziale;
+        int deltaTime = annoFinale - annoIniziale;
+        for(int i = 0; i < deltaTime; i++){
+            popolazioneFinale *= k;
+        }
+        return popolazioneFinale;
     }
 }
-
