@@ -13,7 +13,9 @@ public class Main {
         //System.out.println(between(5, 10, 5));
         //System.out.println(recursiveMultiples(5, 10));
         //System.out.println(recursiveBetween(5, 10, 5));
-        System.out.println(popolazione(2000, 6000000000L, 1.01, 2023));
+//        System.out.println(popolazione(2000, 6000000000L, 1.01, 2023));
+//        System.out.println(recursivePopolazione(2000, 6000000000L, 1.01, 2023));
+        System.out.println(velocità(20, 0.7493));
     }
 
     public static void count(int n, int m) {
@@ -153,6 +155,30 @@ public class Main {
         if(annoIniziale == annoFinale){
             return popolazioneFinale;
         }
-        return (long) recursivePopolazione(annoIniziale + 1, popolazioneIniziale, k, annoFinale)*k;
+        return (long) (recursivePopolazione(annoIniziale + 1, popolazioneIniziale, k, annoFinale)*k);
     }
+
+    /*Il tachimetro per biciclette determina la velocità
+    espressa in metri/minuto a partire dal numero g
+    di giri della ruota conteggiati in un periodo di 10 s
+    in base alla seguente formula:
+    v = 3,1416 - d • g • 6
+    dove d è il diametro della ruota espresso in metri.
+    Scrivere una funzione C++ che, a partire dal dia-
+    metro della ruota e dal numero di giri conteggiati in
+    10 s. determini la velocità in km/h della bicicletta.*/
+
+    public static double velocità(int giri, double diametro){
+        return Math.PI * diametro * giri * 6 / 1000 * 60;
+    }
+
+    /*Un pendolo oscilla con un periodo P espresso in
+    secondi che è funzione della lunghezza / in metri del
+    filo di sospensione secondo la seguente formula:
+    dove la costante g è l'accelerazione di gravità, che
+    sulla Terra vale 9,8 m/s?. Scrivere una funzione C++
+    che determini la lunghezza di un pendolo, dato
+    come parametro il periodo con cui deve oscillare.*/
+
+    public static double pendolo(int )
 }
