@@ -16,6 +16,7 @@ public class Main {
 //        System.out.println(popolazione(2000, 6000000000L, 1.01, 2023));
 //        System.out.println(recursivePopolazione(2000, 6000000000L, 1.01, 2023));
         System.out.println(velocità(20, 0.7493));
+        System.out.println(pendolo(1.2));
     }
 
     public static void count(int n, int m) {
@@ -180,5 +181,21 @@ public class Main {
     che determini la lunghezza di un pendolo, dato
     come parametro il periodo con cui deve oscillare.*/
 
-    public static double pendolo(int )
+    public static double pendolo(double p){
+        return p*p*Math.TAU*Math.TAU/9.8;
+    }
+
+    /*Scrivere una funzione C++ che, a partire dalle
+    coordinate cartesiane di due punti, ne calcoli la
+    distanza.
+
+
+    Scrivere un programma C++ che, dopo
+    avere richiesto all'utente le coordinate di tre pun-
+    ti nel piano cartesiano, calcoli il perimetro del
+    triangolo avente i tre punti come vertici.*/
+
+    public static double distanza(double x1, double y1, double x2, double y2){
+
+    }
 }
