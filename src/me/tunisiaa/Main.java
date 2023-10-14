@@ -1,5 +1,6 @@
 package me.tunisiaa;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class Main {
@@ -209,7 +210,7 @@ public class Main {
         double deltaX2 = Math.abs(x2 - x3);
         double deltaY2 = Math.abs(y2 - y3);
         double deltaX3 = Math.abs(x3 - x1);
-        double deltaY3 = Math.abs(y3 - y1);
+        double deltaY3 = Math.abs(y3 - y1;
         double d1 = Math.sqrt(Math.pow(deltaX1, 2) + Math.pow(deltaY1, 2));
         double d2 = Math.sqrt(Math.pow(deltaX2, 2) + Math.pow(deltaY2, 2));
         double d3 = Math.sqrt(Math.pow(deltaX3, 2) + Math.pow(deltaY3, 2));
