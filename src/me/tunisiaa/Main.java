@@ -15,7 +15,7 @@ public class Main {
         //System.out.println(recursiveBetween(5, 10, 5));
 //        System.out.println(popolazione(2000, 6000000000L, 1.01, 2023));
 //        System.out.println(recursivePopolazione(2000, 6000000000L, 1.01, 2023));
-        System.out.println(velocità(20, 0.7493));
+        System.out.println(velocita(20, 0.7493));
         System.out.println(pendolo(1.2));
     }
 
@@ -169,7 +169,7 @@ public class Main {
     metro della ruota e dal numero di giri conteggiati in
     10 s. determini la velocità in km/h della bicicletta.*/
 
-    public static double velocità(int giri, double diametro){
+    public static double velocita(int giri, double diametro){
         return Math.PI * diametro * giri * 6 / 1000 * 60;
     }
 
