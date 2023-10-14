@@ -17,6 +17,8 @@ public class Main {
 //        System.out.println(recursivePopolazione(2000, 6000000000L, 1.01, 2023));
         System.out.println(velocita(20, 0.7493));
         System.out.println(pendolo(1.2));
+        System.out.println(distanza(1, 1, 4, 5));
+        System.out.println(perimetro(1, 1, 4, 5, 1, 5));
     }
 
     public static void count(int n, int m) {
@@ -196,6 +198,21 @@ public class Main {
     triangolo avente i tre punti come vertici.*/
 
     public static double distanza(double x1, double y1, double x2, double y2){
+        double deltaX = Math.abs(x1 - x2);
+        double deltaY = Math.abs(y1 - y2);
+        return Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
+    }
 
+    public static double perimetro(double x1, double y1, double x2, double y2, double x3, double y3){
+        double deltaX1 = Math.abs(x1 - x2);
+        double deltaY1 = Math.abs(y1 - y2);
+        double deltaX2 = Math.abs(x2 - x3);
+        double deltaY2 = Math.abs(y2 - y3);
+        double deltaX3 = Math.abs(x3 - x1);
+        double deltaY3 = Math.abs(y3 - y1);
+        double d1 = Math.sqrt(Math.pow(deltaX1, 2) + Math.pow(deltaY1, 2));
+        double d2 = Math.sqrt(Math.pow(deltaX2, 2) + Math.pow(deltaY2, 2));
+        double d3 = Math.sqrt(Math.pow(deltaX3, 2) + Math.pow(deltaY3, 2));
+        return d1 + d2 + d3;
     }
 }
