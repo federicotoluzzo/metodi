@@ -1,6 +1,7 @@
 package me.tunisiaa;
 
 import java.awt.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -22,8 +23,10 @@ public class Main {
 //        System.out.println(perimetro(1, 1, 4, 5, 1, 5));
 //        int[] rgb = new int[]{128, 140, 55};
 //        int[] cmy = toCMY(rgb);
-//        System.out.printf("%s %s %s in RGB è uguale a %s %s %s in CMY", rgb[0], rgb[1], rgb[2], cmy[0], cmy[1], cmy[2]);
+//        System.out.printf("%s %s %s in RGB è uguale a %s %s %s in CMY\n", rgb[0], rgb[1], rgb[2], cmy[0], cmy[1], cmy[2]);
 //        System.out.println(getMCD(24, 18));
+//        System.out.printf("123 / 9 può essere semplificato a %s / %s.\n",simplify(123, 9)[0], simplify(123, 9)[1]);
+//        System.out.println("Il primo intero maggiore di 3.141592654 è " + roundUp(3.141592654));
     }
 
     public static void count(int n, int m) {
@@ -275,5 +278,24 @@ public class Main {
             b = r;
         } while(r != 0);
         return b;
+    }
+
+    /*Scrivere una funzione C++ che, a partire dal va-
+    lore di due parametri interi che rappresentano
+    rispettivamente il numeratore e il denominatore
+    di una frazione, li modifichi in modo da rendere la
+    frazione risultante ridotta ai minimi termini?.*/
+
+    public static int[] simplify(int numerator, int denominator){
+        int fractionMCD = getMCD(numerator, denominator);
+        return new int[]{numerator / fractionMCD, denominator / fractionMCD};
+    }
+
+    /*Scrivere una funzione C++ che aggiorni il valore
+    di una variabile numerica non intera fornita come
+    argomento al valore dell'intero più prossimo.*/
+
+    public static int roundUp(double d){
+        return ((int) d) + 1;
     }
 }
