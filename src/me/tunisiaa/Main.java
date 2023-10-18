@@ -6,20 +6,23 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        //count(1, 15);
-        //System.out.println(cmd(5));
-        //System.out.println(recursiveCMD(5));
-        //System.out.println(multiples(5, 10));
-        //hundred();
-        //System.out.println(between(5, 10, 5));
-        //System.out.println(recursiveMultiples(5, 10));
-        //System.out.println(recursiveBetween(5, 10, 5));
+//        count(1, 15);
+//        System.out.println(cmd(5));
+//        System.out.println(recursiveCMD(5));
+//        System.out.println(multiples(5, 10));
+//        hundred();
+//        System.out.println(between(5, 10, 5));
+//        System.out.println(recursiveMultiples(5, 10));
+//        System.out.println(recursiveBetween(5, 10, 5));
 //        System.out.println(popolazione(2000, 6000000000L, 1.01, 2023));
 //        System.out.println(recursivePopolazione(2000, 6000000000L, 1.01, 2023));
-        System.out.println(velocita(20, 0.7493));
-        System.out.println(pendolo(1.2));
-        System.out.println(distanza(1, 1, 4, 5));
-        System.out.println(perimetro(1, 1, 4, 5, 1, 5));
+//        System.out.println(velocita(20, 0.7493));
+//        System.out.println(pendolo(1.2));
+//        System.out.println(distanza(1, 1, 4, 5));
+//        System.out.println(perimetro(1, 1, 4, 5, 1, 5));
+//        int[] rgb = new int[]{128, 140, 55};
+//        int[] cmy = toCMY(rgb);
+//        System.out.printf("%s %s %s in RGB è uguale a %s %s %s in CMY", rgb[0], rgb[1], rgb[2], cmy[0], cmy[1], cmy[2]);
     }
 
     public static void count(int n, int m) {
@@ -210,10 +213,37 @@ public class Main {
         double deltaX2 = Math.abs(x2 - x3);
         double deltaY2 = Math.abs(y2 - y3);
         double deltaX3 = Math.abs(x3 - x1);
-        double deltaY3 = Math.abs(y3 - y1;
+        double deltaY3 = Math.abs(y3 - y1);
         double d1 = Math.sqrt(Math.pow(deltaX1, 2) + Math.pow(deltaY1, 2));
         double d2 = Math.sqrt(Math.pow(deltaX2, 2) + Math.pow(deltaY2, 2));
         double d3 = Math.sqrt(Math.pow(deltaX3, 2) + Math.pow(deltaY3, 2));
         return d1 + d2 + d3;
+    }
+
+    /*Le macchine fotografiche digitali rappresentano i
+    colori come combinazione del rosso, del verde e
+    del blu: il colore di ogni singolo punto dell'imma-
+    gine è rappresentato da un numero compreso tra
+    0 e 255; le stampanti digitali rappresentano i co-
+    lori come combinazione del celeste, del magen-
+    ta e del giallo: anche in questo caso il colore di
+    ogni singolo punto della stampa è rappresentato
+    da un numero compreso tra 0 e 255. Le seguen-
+    ti formule consentono di trasformare i colori dal
+    sistema rosso/verde/blu nei colori del sistema
+    celeste/magenta/giallo:
+    Celeste = 255 - Rosso
+            Magenta = 255 - Verde
+    Giallo = 255 - Blu
+    Scrivere una funzione C++ che determini le sin-
+    gole componenti di un colore di stampa (celeste,
+    magenta e giallo) a partire dalle singole compo-
+    nenti di un colore fotografico (rosso, verde e blu).*/
+
+    public static int[] toCMY(int[] rgb){
+        int cyan = 255 - rgb[0];
+        int magenta = 255 - rgb[1];
+        int yellow = 255 - rgb[2];
+        return new int[]{cyan, magenta, yellow};
     }
 }
