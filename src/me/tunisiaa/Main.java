@@ -23,6 +23,7 @@ public class Main {
 //        int[] rgb = new int[]{128, 140, 55};
 //        int[] cmy = toCMY(rgb);
 //        System.out.printf("%s %s %s in RGB è uguale a %s %s %s in CMY", rgb[0], rgb[1], rgb[2], cmy[0], cmy[1], cmy[2]);
+//        System.out.println(getMCD(24, 18));
     }
 
     public static void count(int n, int m) {
@@ -220,7 +221,9 @@ public class Main {
         return d1 + d2 + d3;
     }
 
-    /*Le macchine fotografiche digitali rappresentano i
+    /*
+    Esercizio 4
+    Le macchine fotografiche digitali rappresentano i
     colori come combinazione del rosso, del verde e
     del blu: il colore di ogni singolo punto dell'imma-
     gine è rappresentato da un numero compreso tra
@@ -245,5 +248,32 @@ public class Main {
         int magenta = 255 - rgb[1];
         int yellow = 255 - rgb[2];
         return new int[]{cyan, magenta, yellow};
+    }
+
+    /*Scrivere una funzione C++ che determini il MCD
+            (massimo comune divisore) tra due numeri interi
+    m ed n (con m > n) utilizzando il seguente algorit-
+    mo attribuito ad Euclide:
+            1) determinare il resto della divisione tra m ed n;
+    2) se r è uguale a 0 terminare: il massimo comu-
+    ne divisore tra m ed n è n;
+    3) porre m uguale al valore di n;
+    4) porre n uguale al valore di r e riprendere dal
+    passo 1.
+    Scrivere un programma C++ che calcoli il MCD
+    tra due numeri forniti in input utilizzando la fun-
+    zione precedente.*/
+
+    public static int getMCD(int a, int b){
+        int r = 0;
+        do{
+            r = a % b;
+            if(r == 0){
+                return b;
+            }
+            a = b;
+            b = r;
+        } while(r != 0);
+        return b;
     }
 }
