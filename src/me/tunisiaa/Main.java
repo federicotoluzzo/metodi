@@ -27,6 +27,7 @@ public class Main {
 //        System.out.println(getMCD(24, 18));
 //        System.out.printf("123 / 9 può essere semplificato a %s / %s.\n",simplify(123, 9)[0], simplify(123, 9)[1]);
 //        System.out.println("Il primo intero maggiore di 3.141592654 è " + roundUp(3.141592654));
+        stats(5);
     }
 
     public static void count(int n, int m) {
@@ -297,5 +298,30 @@ public class Main {
 
     public static int roundUp(double d){
         return ((int) d) + 1;
+    }
+
+    /*Scrivere un programma Java che acquisisca da
+    tastiera un vettore di interi di dimensione N e cal-
+    coli minimo, massimo e media degli elementi.*/
+    public static void stats(int n) {
+        int[] vett = new int[n];
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        double average = 0;
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < n; i++) {
+            System.out.print("Scrivi un numero : ");
+            vett[i] = sc.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+            average += vett[i]/(double) n;
+            if(vett[i] < min){
+                min = vett[i];
+            }
+            if(vett[i] > max){
+                max = vett[i];
+            }
+        }
+        System.out.printf("Min : %s | Max : %s | Average : %s", min, max, average);
     }
 }
