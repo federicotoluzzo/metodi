@@ -27,7 +27,17 @@ public class Main {
 //        System.out.println(getMCD(24, 18));
 //        System.out.printf("123 / 9 può essere semplificato a %s / %s.\n",simplify(123, 9)[0], simplify(123, 9)[1]);
 //        System.out.println("Il primo intero maggiore di 3.141592654 è " + roundUp(3.141592654));
-        stats(5);
+//        stats(5);
+        int[] arr = new int[]{1, 2, 3, 4, 5};
+        printArr(arr);
+        invert(arr);
+        printArr(arr);
+    }
+    public static void printArr(int[] arr){
+        for (int number : arr){
+            System.out.print(number + " ");
+        }
+        System.out.println();
     }
 
     public static void count(int n, int m) {
@@ -374,4 +384,15 @@ public class Main {
     vettore di valori interi, lo visualizzi trasformato
     dall' invocazione della precedente funzione.*/
 
+    public static void swap(int[] arr, int pos1, int pos2){
+        int temp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = temp;
+    }
+
+    public static void invert(int[] arr){
+        for(int i = 0; i < arr.length/2; i++){
+            swap(arr, i, arr.length - i - 1);
+        }
+    }
 }
