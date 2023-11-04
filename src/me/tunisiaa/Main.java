@@ -324,4 +324,54 @@ public class Main {
         }
         System.out.printf("Min : %s | Max : %s | Average : %s", min, max, average);
     }
+
+    /*Scrivere una funzione C/C++ che restituisca true,
+    se un valore numerico intero positivo fornito
+    come argomento è presente almeno una volta tra
+    gli elementi di un vettore fornito anch'esso come
+    argomento, false altrimenti.
+
+    Scrivere un programma C++ che, utilizzando la
+    funzione precedente e costruendo il vettore a
+    partire da valori forniti da tastiera, visualizzi, in ri-
+    sposta a singoli valori successivamente richiesti
+    all'utente, «Vero» in caso di presenza nel vettore
+    o «Falso» altrimenti (la richiesta terminerà in cor-
+    rispondenza dell'inserimento del valore 0).*/
+
+    public static boolean contains(int[] arr, int n){
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] == n){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void nonSoComeChiamareQuestoMetodoHoFinitoLaCreatività(){
+        Scanner sc = new Scanner(System.in);
+        int input = 0;
+        int[] vett = new int[10];
+        System.out.println("Scrivi i 10 numeri da inserire nel vettore :");
+        for (int i = 0; i < 10; i++) {
+            vett[i] = sc.nextInt();
+        }
+        do{
+            input = sc.nextInt();
+            if(contains(vett, input)){
+                System.out.println("Vero");
+            }else{
+                System.out.println("Falso");
+            }
+        }while(input != 0);
+    }
+
+    /*Scrivere una funzione C++ che inverta la posizio-
+    ne degli elementi di un vettore di interi di cui sia
+• fornita la dimensione (risolvere il problema senza
+            usare vettori ulteriori). Scrivere un programma
+    C++ che, dopo avere acquisito da tastiera un
+    vettore di valori interi, lo visualizzi trasformato
+    dall' invocazione della precedente funzione.*/
+
 }
