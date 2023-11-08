@@ -32,8 +32,8 @@ public class Main {
 //        printArr(arr);
 //        invert(arr);
 //        printArr(arr);
-        printArr(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535});
-        printArr(datiElaborati(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535}));
+//        printArr(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535});
+//        printArr(datiElaborati(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535}));
     }
     public static void printArr(int[] arr){
         for (int number : arr){
@@ -449,5 +449,61 @@ public class Main {
     to del conteggio dopo avere richiesto all'utente i
     valori minimo e massimo.*/
 
+    public static int numeroCompresi(int[] arr, int min, int max){
+        int counter = 0;
+        for (int n : arr) {
+            if(n >= min && n <= max){
+                counter++;
+            }
+        }
+        return counter;
+    }
 
+    public static int inputInt(){
+        System.out.print("Scrivi un numero :");
+        Scanner sc = new Scanner(System.in);
+        return sc.nextInt();
+    }
+    public static void nomeMetodoCreativo(){
+        int len;
+        int min;
+        int max;
+        int input;
+        System.out.print("Quanto lunga deve essere la lista?");
+        len = inputInt();
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = inputInt();
+        }
+        System.out.println("Scrivi il minimo");
+        min = inputInt();
+        System.out.println("Scrivi il massimo");
+        max = inputInt();
+        System.out.printf("%s numeri sono compresi tra %s e %s.",compresi(arr, min, max), min, max);
+    }
+
+    /*Scrivere una funzione C/C++ che, a partire da un
+    vettore numerico di dimensione N fornito come
+    parametro, copi in un secondo vettore (anch'es-
+            so fornito come parametro) i soli elementi del
+    primo vettore compresi tra un valore minimo a e
+    un valore massimo b (anch'essi argomenti della
+            funzione): la funzione deve restituire la dimensio-
+    ne del secondo vettore. Scrivere un programma
+    C++ che, utilizzando la funzione precedente, vi-
+    sualizzi gli elementi del secondo vettore dopo
+    avere richiesto l'inserimento da tastiera dei valori
+    del primo vettore.*/
+
+    public static int[] compresi(int[] arr, int min, int max){
+        int[] temp = new int[1];
+        for (int i = 0; i < arr.length; i++) {
+
+        }
+        for (int n : arr) {
+            if(n >= min && n <= max){
+                temp[];
+            }
+        }
+    }
 }
