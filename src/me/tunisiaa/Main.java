@@ -28,13 +28,21 @@ public class Main {
 //        System.out.printf("123 / 9 può essere semplificato a %s / %s.\n",simplify(123, 9)[0], simplify(123, 9)[1]);
 //        System.out.println("Il primo intero maggiore di 3.141592654 è " + roundUp(3.141592654));
 //        stats(5);
-        int[] arr = new int[]{1, 2, 3, 4, 5};
-        printArr(arr);
-        invert(arr);
-        printArr(arr);
+//        int[] arr = new int[]{1, 2, 3, 4, 5};
+//        printArr(arr);
+//        invert(arr);
+//        printArr(arr);
+        printArr(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535});
+        printArr(datiElaborati(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535}));
     }
     public static void printArr(int[] arr){
         for (int number : arr){
+            System.out.print(number + " ");
+        }
+        System.out.println();
+    }
+    public static void printArr(double[] arr){
+        for (double number : arr){
             System.out.print(number + " ");
         }
         System.out.println();
@@ -395,4 +403,51 @@ public class Main {
             swap(arr, i, arr.length - i - 1);
         }
     }
+
+    /*Uno strumento di misura fornisce un dato ogni
+    minuto nell'arco di un'ora. Per ovviare a possibili
+    errori si vogliono elaborare i valori rilevati sosti-
+    tuendoli con una media a tre punti: ogni elemento
+    viene sostituito dalla media di sé stesso, dell'ele-
+    mento che lo precede e quello che lo segue; per i
+    due elementi estremi viene considerato due vol-
+    te il valore dell'elemento stesso e il successivo
+    o il precedente nel caso si tratti rispettivamente
+    del primo o dell'ultimo elemento. Realizzare un
+    programma C++ che implementi l'elaborazione
+    descritta acquisendo i dati da tastiera.*/
+
+    public static double[] copyDoubleArray(double[] arr){ // non mi ero accorto dell'esistenza di System.arrayCopy()
+        double[] temp = new double[arr.length];
+        for(int i = 0; i < arr.length; i++){
+            temp[i] = arr[i];
+        }
+        return temp;
+    }
+    public static double threePointAverage(double[] arr, int pos){
+        return (arr[pos - 1] + arr[pos] + arr[pos + 1]) / 3;
+    }
+    public static double[] datiElaborati(double[] arr){
+        double[] tempArr = copyDoubleArray(arr);
+        tempArr[0] = (arr[0] + arr[0] + arr[1]) / 3;
+        tempArr[arr.length - 1] = (arr[arr.length - 1] + arr[arr.length - 1] + arr[arr.length - 2]) / 3;
+        for (int i = 1; i < arr.length - 1; i++) {
+            tempArr[i] = threePointAverage(arr, i);
+        }
+        return tempArr;
+    }
+
+    /*Dato un vettore di valori numerici, scrivere una
+    funzione C++ che conti quanti elementi del vetto-
+    re sono compresi tra un valore minimo e un valo-
+    re massimo forniti come argomenti alla funzione
+    stessa insieme alla dimensione del vettore.
+
+    Scrivere un programma C++ che, utilizzando la fun-
+    zione precedente e costruendo il vettore a partire
+    da valori acquisiti da tastiera, visualizzi il risulta-
+    to del conteggio dopo avere richiesto all'utente i
+    valori minimo e massimo.*/
+
+
 }
