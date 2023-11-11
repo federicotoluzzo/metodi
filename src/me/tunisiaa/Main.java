@@ -405,28 +405,33 @@ public class Main {
     }
 
     /*Uno strumento di misura fornisce un dato ogni
-    minuto nell'arco di un'ora. Per ovviare a possibili
-    errori si vogliono elaborare i valori rilevati sosti-
-    tuendoli con una media a tre punti: ogni elemento
-    viene sostituito dalla media di sé stesso, dell'ele-
-    mento che lo precede e quello che lo segue; per i
-    due elementi estremi viene considerato due vol-
-    te il valore dell'elemento stesso e il successivo
-    o il precedente nel caso si tratti rispettivamente
-    del primo o dell'ultimo elemento. Realizzare un
-    programma C++ che implementi l'elaborazione
-    descritta acquisendo i dati da tastiera.*/
+minuto nell'arco di un'ora. Per ovviare a possibili
+errori si vogliono elaborare i valori rilevati sosti-
+tuendoli con una media a tre punti: ogni elemento
+viene sostituito dalla media di sé stesso, dell'ele-
+mento che lo precede e quello che lo segue; per i
+due elementi estremi viene considerato due vol-
+te il valore dell'elemento stesso e il successivo
+o il precedente nel caso si tratti rispettivamente
+del primo o dell'ultimo elemento. Realizzare un
+programma C++ che implementi l'elaborazione
+descritta acquisendo i dati da tastiera.*/
 
-    public static double[] copyDoubleArray(double[] arr){ // non mi ero accorto dell'esistenza di System.arrayCopy()
+
+    public static double[] copyDoubleArray(double[] arr){
         double[] temp = new double[arr.length];
         for(int i = 0; i < arr.length; i++){
             temp[i] = arr[i];
         }
         return temp;
     }
+
+
     public static double threePointAverage(double[] arr, int pos){
         return (arr[pos - 1] + arr[pos] + arr[pos + 1]) / 3;
     }
+
+
     public static double[] datiElaborati(double[] arr){
         double[] tempArr = copyDoubleArray(arr);
         tempArr[0] = (arr[0] + arr[0] + arr[1]) / 3;
@@ -437,17 +442,20 @@ public class Main {
         return tempArr;
     }
 
-    /*Dato un vettore di valori numerici, scrivere una
-    funzione C++ che conti quanti elementi del vetto-
-    re sono compresi tra un valore minimo e un valo-
-    re massimo forniti come argomenti alla funzione
-    stessa insieme alla dimensione del vettore.
 
-    Scrivere un programma C++ che, utilizzando la fun-
-    zione precedente e costruendo il vettore a partire
-    da valori acquisiti da tastiera, visualizzi il risulta-
-    to del conteggio dopo avere richiesto all'utente i
-    valori minimo e massimo.*/
+/*Dato un vettore di valori numerici, scrivere una
+funzione C++ che conti quanti elementi del vetto-
+re sono compresi tra un valore minimo e un valo-
+re massimo forniti come argomenti alla funzione
+stessa insieme alla dimensione del vettore.
+
+
+Scrivere un programma C++ che, utilizzando la fun-
+zione precedente e costruendo il vettore a partire
+da valori acquisiti da tastiera, visualizzi il risulta-
+to del conteggio dopo avere richiesto all'utente i
+valori minimo e massimo.*/
+
 
     public static int numeroCompresi(int[] arr, int min, int max){
         int counter = 0;
@@ -458,6 +466,7 @@ public class Main {
         }
         return counter;
     }
+
 
     public static int inputInt(){
         System.out.print("Scrivi un numero :");
@@ -482,28 +491,48 @@ public class Main {
         System.out.printf("%s numeri sono compresi tra %s e %s.",compresi(arr, min, max), min, max);
     }
 
-    /*Scrivere una funzione C/C++ che, a partire da un
-    vettore numerico di dimensione N fornito come
-    parametro, copi in un secondo vettore (anch'es-
-            so fornito come parametro) i soli elementi del
-    primo vettore compresi tra un valore minimo a e
-    un valore massimo b (anch'essi argomenti della
-            funzione): la funzione deve restituire la dimensio-
-    ne del secondo vettore. Scrivere un programma
-    C++ che, utilizzando la funzione precedente, vi-
-    sualizzi gli elementi del secondo vettore dopo
-    avere richiesto l'inserimento da tastiera dei valori
-    del primo vettore.*/
+
+/*Scrivere una funzione C/C++ che, a partire da un
+vettore numerico di dimensione N fornito come
+parametro, copi in un secondo vettore (anch'es-
+       so fornito come parametro) i soli elementi del
+primo vettore compresi tra un valore minimo a e
+un valore massimo b (anch'essi argomenti della
+       funzione): la funzione deve restituire la dimensio-
+ne del secondo vettore. Scrivere un programma
+C++ che, utilizzando la funzione precedente, vi-
+sualizzi gli elementi del secondo vettore dopo
+avere richiesto l'inserimento da tastiera dei valori
+del primo vettore.*/
+
 
     public static int[] compresi(int[] arr, int min, int max){
-        int[] temp = new int[1];
-        for (int i = 0; i < arr.length; i++) {
-
-        }
+        int len = 0;
+        int[] temp1 = new int[1];
+        int[] temp2;
         for (int n : arr) {
             if(n >= min && n <= max){
-                temp[];
+                temp2 = new int[++len];
+                for (int i = 0; i < temp2.length; i++) {
+                    try{
+                        temp2[i] = temp1[i];
+                    } catch (Exception e){
+
+
+                    }
+                }
+                temp1 = new int[len];
+                for (int i = 0; i < temp1.length; i++) {
+                    try{
+                        temp1[i] = temp2[i];
+                    } catch (Exception e){
+
+
+                    }
+                }
+                temp1[len - 1] = n;
             }
         }
+        return temp1;
     }
 }
