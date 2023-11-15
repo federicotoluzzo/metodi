@@ -34,6 +34,7 @@ public class Main {
 //        printArr(arr);
 //        printArr(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535});
 //        printArr(datiElaborati(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535}));
+        System.out.println(recursiveSearch(new int[]{0, 1, 2 , 3, 4, 5, 6, 7, 8, 9, 10}, 11));
     }
     public static void printArr(int[] arr){
         for (int number : arr){
@@ -598,5 +599,18 @@ del primo vettore.*/
             cifra += i % 2 == 0 ? arr[i] : arr[i] * 3;
         }
         return cifra % 10;
+    }
+
+    public static boolean recursiveSearch(int[] arr, int val){
+        if(arr.length == 1){
+            return arr[0] == val;
+        }
+        int[] firstHalf = new int[arr.length / 2];
+        int[] secondHalf = new int[arr.length / 2];
+        for (int i = 0; i < arr.length / 2; i++) {
+            firstHalf[i] = arr[i];
+            secondHalf[i] = arr[i + arr.length / 2];
+        }
+        return recursiveSearch(firstHalf, val) || recursiveSearch(secondHalf, val);
     }
 }
