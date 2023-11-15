@@ -535,4 +535,68 @@ del primo vettore.*/
         }
         return temp1;
     }
+
+    /*Scrivere una funzione C++ avente il seguente
+    prototipo:
+    void derive (float data[], int n, float difference[]);
+    che, a parure dal vettore data di dimensione n, co-
+    struisca il vettore difference contenente le diffe
+    renze tra due elementi adiacenti del vettore data.
+    Cioé il primo elemento di difference dovra esse
+    re la differenza tra il secondo e il primo elemento
+    di data, il secondo elemento di difference dovra
+    essere la differenza tra terzo e il secondo ele-
+    mento di data e cosi via. Scrivere un programma
+    C++ che, utilizzando la funzione precedente e co-
+    struendo il vettore a partire da valori acquisiti da
+    tastiera, visualizzi il vettore risultato del calcolo.*/
+
+    public static void derive(double data[], double difference[]){
+        difference = new double[data.length - 1];
+        for (int i = 0; i < difference.length; i++) {
+            difference[i] = data[i + 1] - data[i];
+        }
+    }
+
+    public static void inputDerive(){
+        int len = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Quanto lungo deve essere l'array?");
+        len = sc.nextInt();
+        double[] arr = new double[len];
+        double[] derive = new double[len - 1];
+        for (int i = 0; i < len; i++) {
+            arr[i] = sc.nextDouble();
+        }
+        printArr(derive);
+    }
+    /*Scrivere una funzione C++ avente il seguente
+    * prototipo:
+    float scalarProduct (loat all, float bl],
+                         int N);
+    dove N rappresenta la dimensione dei vettori a
+    e b, che restituisca il prodotto scalare tra a e b,
+    cioè la somma dei prodotti tra gli elementi corri-
+    spondenti (il primo con il primo, il secondo con il
+            secondo e così via) dei due vettori.*/
+    double scalarProduct(double[] arr1, double[] arr2){
+        double product = 0;
+        for (int i = 0; i < arr1.length; i++) {
+            product += arr1[i] * arr2[i];
+        }
+        return product;
+    }
+
+    /*Scrivere una funzione C/C++ che, a partire da un
+    vettore di 12 numeri corrispondenti alle singole
+    cifre di un codice a barre, restituisca la cifra di
+    controllo calcolata con le regole illustrate.*/
+
+    public static int controllo(int[] arr){
+        int cifra = 0;
+        for (int i = 0; i < arr.length; i++) {
+            cifra += i % 2 == 0 ? arr[i] : arr[i] * 3;
+        }
+        return cifra % 10;
+    }
 }
