@@ -2,6 +2,7 @@ package me.tunisiaa;
 
 import java.awt.*;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -34,7 +35,23 @@ public class Main {
 //        printArr(arr);
 //        printArr(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535});
 //        printArr(datiElaborati(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535}));
-        System.out.println(recursiveSearch(new int[]{0, 1, 2 , 3, 4, 5, 6, 7, 8, 9, 10}, 11));
+        int[] arr = randomArray(10000000);
+        long t1 = System.currentTimeMillis();
+        System.out.println(contains(arr, 11));
+        long t2 = System.currentTimeMillis();
+        System.out.println(t2 - t1);
+        t1 = System.currentTimeMillis();
+        System.out.println(recursiveSearch(arr, 11));
+        t2 = System.currentTimeMillis();
+        System.out.println(t2 - t1);
+    }
+    public static int[] randomArray(int length){
+        int[] arr = new int[length];
+        Random r = new Random();
+        for (int i = 0; i < length; i++) {
+            arr[i] = r.nextInt();
+        }
+        return arr;
     }
     public static void printArr(int[] arr){
         for (int number : arr){
