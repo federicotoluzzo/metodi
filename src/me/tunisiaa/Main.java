@@ -35,7 +35,7 @@ public class Main {
 //        printArr(arr);
 //        printArr(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535});
 //        printArr(datiElaborati(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535}));
-        int[] arr = randomArray(10000000);
+        int[] arr = randomArray(200000000);
         long t1 = System.currentTimeMillis();
         System.out.println(contains(arr, 11));
         long t2 = System.currentTimeMillis();
