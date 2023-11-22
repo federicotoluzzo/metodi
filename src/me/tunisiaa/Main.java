@@ -35,15 +35,19 @@ public class Main {
 //        printArr(arr);
 //        printArr(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535});
 //        printArr(datiElaborati(new double[]{10, 2, 4, 5, 7, 123, 6 ,3.1415926535}));
-        int[] arr = randomArray(200000000);
-        long t1 = System.currentTimeMillis();
-        System.out.println(contains(arr, 11));
-        long t2 = System.currentTimeMillis();
-        System.out.println(t2 - t1);
-        t1 = System.currentTimeMillis();
-        System.out.println(recursiveSearch(arr, 11));
-        t2 = System.currentTimeMillis();
-        System.out.println(t2 - t1);
+//        int[] arr = randomArray(200000000);
+//        long t1 = System.currentTimeMillis();
+//        System.out.println(contains(arr, 11));
+//        long t2 = System.currentTimeMillis();
+//        System.out.println(t2 - t1);
+//        t1 = System.currentTimeMillis();
+//        System.out.println(recursiveSearch(arr, 11));
+//        t2 = System.currentTimeMillis();
+//        System.out.println(t2 - t1);
+//        System.out.println(fib(45));
+        int[] arr = {0, 5, -5, 6, 2, 8};
+        bubbleSort(arr);
+        printArr(arr);
     }
     public static int[] randomArray(int length){
         int[] arr = new int[length];
@@ -629,5 +633,42 @@ del primo vettore.*/
             secondHalf[i] = arr[i + arr.length / 2];
         }
         return recursiveSearch(firstHalf, val) || recursiveSearch(secondHalf, val);
+    }
+
+    public static int fib(int pos){
+        if(pos < 1){
+            return 1;
+        }
+        return fib(pos - 1) + fib(pos - 2);
+    }
+
+    public static void bubbleSort(int[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if(arr[j] > arr[j + 1]){
+                    //swap
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static boolean find(int[] arr, int value){
+        if(arr.length == 1){
+            return arr[0] == value;
+        }
+        int start = arr[arr.length / 2] > value ? 0 : arr.length / 2;
+        int end = arr[arr.length / 2] > value ? arr.length / 2 : arr.length;
+        return find(arr, value, start, end);
+    }
+    public static boolean find(int[] arr, int value, int start, int end){
+        if(arr.length == 1){
+            return arr[0] == value;
+        }
+        int begin = arr[(end - start) / 2 + start] > value ? 0 : arr.length / 2;
+        int finish = arr[arr.length / 2] > value ? arr.length / 2 : arr.length;
+        return find(arr, value, begin, finish);
     }
 }
