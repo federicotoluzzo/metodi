@@ -48,6 +48,7 @@ public class Main {
         int[] arr = {0, 5, -5, 6, 2, 8};
         bubbleSort(arr);
         printArr(arr);
+        System.out.println(find(arr, 5));
     }
     public static int[] randomArray(int length){
         int[] arr = new int[length];
@@ -655,7 +656,7 @@ del primo vettore.*/
         }
     }
 
-    public static boolean find(int[] arr, int value){
+    /*public static boolean find(int[] arr, int value){
         if(arr.length == 1){
             return arr[0] == value;
         }
@@ -664,11 +665,25 @@ del primo vettore.*/
         return find(arr, value, start, end);
     }
     public static boolean find(int[] arr, int value, int start, int end){
-        if(arr.length == 1){
-            return arr[0] == value;
+        if(end == start){
+            return arr[start] == value;
         }
-        int begin = arr[(end - start) / 2 + start] > value ? 0 : arr.length / 2;
-        int finish = arr[arr.length / 2] > value ? arr.length / 2 : arr.length;
+        int begin = arr[(end - start) / 2 + start] > value ? 0 : arr.length / 2 + 1;
+        int finish = arr[(end - start) / 2 + start] > value ? arr.length / 2 + 1 : arr.length;
         return find(arr, value, begin, finish);
+    }*/
+
+    public static boolean find(int[] arr, int value){
+        int begin = 0;
+        int end = arr.length;
+        for (int i = 0; begin != end; i++) {
+            if(arr[(end - begin) / 2] > value){
+                end = (end - begin) / 2 + begin;
+            }else{
+                begin += (end - begin) / 2;
+            }
+        }
+        return arr[begin] == value;
     }
+
 }
