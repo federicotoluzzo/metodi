@@ -54,6 +54,9 @@ public class Main {
 //        System.out.println(codificaDiCesare("CI.AO"));
 //        System.out.println(deCodificaDiCesare(codificaDiCesare("CIAO, PROFESSORE")));
 //        System.out.println(rot13("HELLO"));
+//        System.out.println(contaParole("Test conta parole.\nFrase a capo"));
+//        System.out.println(metodo("asd", "abd"));
+
     }
     public static int[] randomArray(int length){
         int[] arr = new int[length];
@@ -817,12 +820,41 @@ del primo vettore.*/
     punteggiatura ecc.)*/
 
     public static int contaParole(String s){
-        int parole = 0;
+        int parole = 1;
         for (int i = 0; i < s.length(); i++) {
             if(s.charAt(i) == ' ' || s.charAt(i) == '\n'){ // gli spazi tanto si trovano sia dopo le virgole che dopo i punti quindi bastano quelli.
                 parole++;
             }
         }
         return parole;
+    }
+
+    /*Scrivere una funzione C/C++ che abbia come pa-
+    rametri due stringhe e restituisca:
+            • -1 se la prima stringa precede in ordine alfabe-
+    tico la seconda stringa;
+• O se le due stringhe sono uguali;
+• 1 se la seconda stringa precede in ordine alfa-
+    betico la prima stringa.
+    Scrivere un programma C++ che, dopo avere ri-
+    chiesto all'utente l'inserimento da tastiera di tre
+    stringhe, le visualizzi sullo schermo in ordine al-
+    fabetico.*/
+
+    public static int metodo(String s1, String s2){
+        if(s1.equals(s2)) {
+            return 0;
+        }else{
+            return s1.compareTo(s2) > 0 ? 1 : -1;
+        }
+    }
+
+    public static void odotem(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Scrivi tre parole : ");
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        String s3 = sc.nextLine();
+
     }
 }
