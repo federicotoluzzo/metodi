@@ -56,7 +56,7 @@ public class Main {
 //        System.out.println(rot13("HELLO"));
 //        System.out.println(contaParole("Test conta parole.\nFrase a capo"));
 //        System.out.println(metodo("asd", "abd"));
-
+        odotem();
     }
     public static int[] randomArray(int length){
         int[] arr = new int[length];
@@ -855,6 +855,23 @@ del primo vettore.*/
         String s1 = sc.nextLine();
         String s2 = sc.nextLine();
         String s3 = sc.nextLine();
-
+        System.out.println(ordinaTreParole(s1, s2, s3));
+    }
+    public static String ordinaTreParole(String s1, String s2, String s3){
+        String[] s = {s1, s2, s3};
+        String ordinate = "";
+        for (int i = 0; i < 3; i++) {
+            for (int j = i; j < 3; j++) {
+                if(metodo(s[i], s[j]) > 0){
+                    String temp = s[i];
+                    s[i] = s[j];
+                    s[j] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            ordinate += s[i] + " ";
+        }
+        return ordinate;
     }
 }
