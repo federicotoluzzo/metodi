@@ -50,7 +50,9 @@ public class Main {
 //        bubbleSort(arr);
 //        printArr(arr);
 //        System.out.println(find(arr, 5));
-        System.out.println(isPalindrome("itopinonavevanonipoti"));
+//        System.out.println(isPalindrome("itopinonavevanonipoti"));
+//        System.out.println(codificaDiCesare("CI.AO"));
+//        System.out.println(deCodificaDiCesare(codificaDiCesare("CIAO, PROFESSORE")));
     }
     public static int[] randomArray(int length){
         int[] arr = new int[length];
@@ -740,4 +742,61 @@ del primo vettore.*/
         }
         return true;
     }
+
+    /*Nel De bello gallico Giulio Cesare racconta di
+    avere utilizzato un codice segreto per comuni-
+    care in forma scritta con i propri generali: ogni
+    singola lettera del messaggio veniva sostituita
+    con la lettera che la seguiva nell'ordinamento al-
+    fabetico (A - B, B - C, ...,Z → A), i simboli delle
+    cifre numeriche e i segni di punteggiatura erano
+    lasciati invariati. Scrivere due programmi C++: il
+    primo deve codificare secondo la regola di Ce-
+    sare una stringa di testo inserita dall'utente e vi-
+    sualizzare il risultato, il secondo deve accettare
+    una stringa segreta e decodificaria visualizzando
+    il testo originale.*/
+
+    public static String codificaDiCesare(String s){
+        String cesare = "";
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) > 64 && s.charAt(i) < 90){
+                cesare += (char)(s.charAt(i) + 1);
+            }else if(s.charAt(i) == 'Z'){
+                cesare += 'A';
+            }else{
+                cesare += s.charAt(i);
+            }
+        }
+        return cesare;
+    }
+
+    public static String deCodificaDiCesare(String s){
+        String cesare = "";
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) > 65 && s.charAt(i) < 91){
+                cesare += (char)(s.charAt(i) - 1);
+            }else if(s.charAt(i) == 'A'){
+                cesare += 'Z';
+            }else{
+                cesare += s.charAt(i);
+            }
+        }
+        return cesare;
+    }
+
+    /*Il ROT13 e una tecnica di codifica del testo ba-
+    sata sulla sostituzione di ogni singolo carattere
+    alfabetico con il carattere che lo segue esatta-
+    mente di 13 posizioni nella sequenza alfabetica:
+    se si supera la posizione della «Z» si prosegue
+    riprendendo dalla «A». La FIGURA 10 illustra
+    la codifica della parola «HELLO», che diviene
+«URYYB»…
+    Tenendo conto che lo stesso algoritmo si utilizza
+    sia per la codifica sia per la decodifica, scrivere
+    una funzione C/C++ che codifichi/decodifichi se-
+    condo la regola ROT13 una stringa di testo.*/
+
+
 }
