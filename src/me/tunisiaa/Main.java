@@ -2,6 +2,7 @@ package me.tunisiaa;
 
 import java.awt.*;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -45,10 +46,11 @@ public class Main {
 //        t2 = System.currentTimeMillis();
 //        System.out.println(t2 - t1);
 //        System.out.println(fib(45));
-        int[] arr = {0, 5, -5, 6, 2, 8};
-        bubbleSort(arr);
-        printArr(arr);
-        System.out.println(find(arr, 5));
+//        int[] arr = {0, 5, -5, 6, 2, 8};
+//        bubbleSort(arr);
+//        printArr(arr);
+//        System.out.println(find(arr, 5));
+        System.out.println(isPalindrome("itopinonavevanonipoti"));
     }
     public static int[] randomArray(int length){
         int[] arr = new int[length];
@@ -686,4 +688,56 @@ del primo vettore.*/
         return arr[begin] == value;
     }
 
+    /*Scrivere una funzione C/C++ che accettata come
+    parametro una stringa s, ne calcoli il numero del-
+    le consonanti o delle vocali sulla base di un altro
+    opportuno parametro che indichi il tipo di con-
+    teggio da effettuare (per esempio: «C» = conso-
+    nanti, «V» = vocali).*/
+
+    public static int contaVocali(String s, boolean vocali){
+        char[] voc = {'a', 'e', 'i', 'o', 'u'};
+        int counter = 0;
+        if(vocali){
+            for(char c : s.toCharArray()){
+                boolean isVocale = false;
+                for (char v: voc) {
+                    if(c == v){
+                        isVocale = true;
+                    }
+                }
+                if(isVocale){
+                    counter++;
+                }
+            }
+        }else{
+            for(char c : s.toCharArray()){
+                boolean isVocale = false;
+                for (char v: voc) {
+                    if(c == v){
+                        isVocale = true;
+                    }
+                }
+                if(!isVocale){
+                    counter++;
+                }
+            }
+        }
+        return counter;
+    }
+
+    /*Data una stringa di caratteri, scrivere una funzio-
+    ne che verifichi se la stringa è o meno palindro-
+    ma (cioè tale che, leggendo la stringa da sinistra
+            verso destra o viceversa, si ottiene sempre la
+                stessa sequenza di caratteri).*/
+
+    public static boolean isPalindrome(String s){
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) != s.charAt(s.length() - i - 1)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
