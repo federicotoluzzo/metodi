@@ -53,6 +53,7 @@ public class Main {
 //        System.out.println(isPalindrome("itopinonavevanonipoti"));
 //        System.out.println(codificaDiCesare("CI.AO"));
 //        System.out.println(deCodificaDiCesare(codificaDiCesare("CIAO, PROFESSORE")));
+        System.out.println(rot13("HELLO"));
     }
     public static int[] randomArray(int length){
         int[] arr = new int[length];
@@ -798,5 +799,15 @@ del primo vettore.*/
     una funzione C/C++ che codifichi/decodifichi se-
     condo la regola ROT13 una stringa di testo.*/
 
-
+    public static String rot13(String s){
+        String rot13 = "";
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) > 64 && s.charAt(i) < 91){
+                rot13 += (char)(65 + (s.charAt(i) - 65 + 13) % 26);
+            }else{
+                rot13 += s.charAt(i);
+            }
+        }
+        return rot13;
+    }
 }
