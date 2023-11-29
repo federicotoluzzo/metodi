@@ -53,7 +53,7 @@ public class Main {
 //        System.out.println(isPalindrome("itopinonavevanonipoti"));
 //        System.out.println(codificaDiCesare("CI.AO"));
 //        System.out.println(deCodificaDiCesare(codificaDiCesare("CIAO, PROFESSORE")));
-        System.out.println(rot13("HELLO"));
+//        System.out.println(rot13("HELLO"));
     }
     public static int[] randomArray(int length){
         int[] arr = new int[length];
@@ -809,5 +809,20 @@ del primo vettore.*/
             }
         }
         return rot13;
+    }
+
+    /*Scrivere una funzione C/C++ che determini il nu-
+    mero di parole presenti in una stringa tenendo
+    conto dei vari caratteri di separazione (spazi,
+    punteggiatura ecc.)*/
+
+    public static int contaParole(String s){
+        int parole = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) == ' ' || s.charAt(i) == '\n'){ // gli spazi tanto si trovano sia dopo le virgole che dopo i punti quindi bastano quelli.
+                parole++;
+            }
+        }
+        return parole;
     }
 }
