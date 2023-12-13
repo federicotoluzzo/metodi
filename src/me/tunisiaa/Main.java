@@ -897,4 +897,49 @@ del primo vettore.*/
         }
         return product;
     }
+    /*
+    Es 14
+    Scrivere una funzione C/C++ che restituisca il va-
+    lore massimo di una matrice di dimensioni N x N
+    fornita come argomento; la funzione deve fornire
+    anche le coordinate (indice di riga e indice di co-
+    lonna) di tale valore. Scrivere un programma C++
+    che, utilizzando la funzione precedente, visualizzi
+    il valore massimo e le relative coordinate di una
+    matrice i cui elementi sono inseriti da tastiera.*/
+
+    public static int[] findMax(int[][] mat){
+        int max = 0;
+        int posX = 0;
+        int posY = 0;
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if(mat[i][j] > max){
+                    max = mat[i][j];
+                    posX = j;
+                    posY = i;
+                }
+            }
+        }
+        return new int[]{max, posX, posY};
+    }
+
+    /*
+    Es 15
+    Scrivere una funzione C/C++ che determini, pro-
+    ducendo come risultato true o false, se una ma-
+    trice quadrata di N x N elementi è simmetrica,
+    cioè se gli elementi in posizione simmetrica ri-
+    spetto alla diagonale principale sono tutti uguali.*/
+
+    public static boolean isSymmetric(int[][] mat){
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if(mat[i][j] != mat[mat.length - j - 1][mat[0].length - i - 1]){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
