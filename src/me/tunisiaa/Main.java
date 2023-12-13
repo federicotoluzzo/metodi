@@ -942,4 +942,65 @@ del primo vettore.*/
         }
         return true;
     }
+
+    /*
+    Es 16 A
+    Scrivere una funzione C/C++ che costruisca, in
+    una matrice quadrata di N × N elementi passa-
+    ta come argomento, la trasposta di una matrice
+    quadrata di N × N elementi fornita anch'essa
+    come argomento. La trasposta di una matrice*/
+
+    public static void trasposta(int[][] mat1, int[][] mat2){
+        if(mat1.length != mat2.length || mat1[0].length != mat2[0].length){
+            throw new IllegalArgumentException("Le matrici devono avere la stessa dimensione");
+        }
+        for (int i = 0; i < mat1.length; i++) {
+            for (int j = 0; j < mat1[0].length; j++) {
+                mat1[j][i] = mat2[i][j];
+            }
+        }
+    }
+
+    /*
+    Es 16 B
+    Scrivere un programma C++ che, utilizzando la
+    funzione precedente e costruendo la matrice ini-
+    ziale a partire da valori forniti da tastiera, visua-
+    lizzi la matrice trasposta disponendo gli elementi
+    su più righe.*/
+
+    public static void userTrasposta(){
+        final int DIM = 4;
+        int[][] mat2 = new int[DIM][DIM];
+        int[][] mat1 = new int[DIM][DIM];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < DIM; i++) {
+            for (int j = 0; j < DIM; j++) {
+                mat2[i][j] = sc.nextInt();
+            }
+        }
+        trasposta(mat1, mat2);
+        for (int i = 0; i < DIM; i++) {
+            for (int j = 0; j < DIM; j++) {
+                System.out.printf("%d ", mat1);
+            }
+            System.out.println();
+        }
+    }
+
+    /*Un'area vulcanica viene monitorata dalla Prote-
+    zione civile mediante alcuni sensori di tempe-
+    ratura numerati (0, 1, 2, ...), che periodicamente
+    forniscono una misura della temperatura del ter-
+    reno in cui sono posizionati.
+    Si intende realizzare un programma C++ che con-
+    senta di inserire e memorizzare i valori di tem-
+    peratura dei singoli sensori ogni volta che sono
+    disponibili calcolandone i valori medio, minimo
+    e massimo; lo stesso programma deve inoltre
+    permettere di visualizzare la sequenza temporale
+    delle misure di temperatura di un singolo sensore
+    specificato dall'operatore e di calcolarne media,
+    valore minimo e valore massimo.*/
 }
