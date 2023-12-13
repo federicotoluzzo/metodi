@@ -56,7 +56,7 @@ public class Main {
 //        System.out.println(rot13("HELLO"));
 //        System.out.println(contaParole("Test conta parole.\nFrase a capo"));
 //        System.out.println(metodo("asd", "abd"));
-        odotem();
+//        odotem();
     }
     public static int[] randomArray(int length){
         int[] arr = new int[length];
@@ -873,5 +873,31 @@ del primo vettore.*/
             ordinate += s[i] + " ";
         }
         return ordinate;
+    }
+    /*Restituire la somma di due matrici*/
+    public static int[][] matrixSum(int[][] mat1, int[][] mat2){
+        if(mat1.length != mat2.length || mat1[0].length != mat2[0].length){
+            throw new IllegalArgumentException("Le matrici devono avere la stessa dimensione");
+        }
+        int[][] sum = new int[mat1.length][mat1[0].length];
+        for (int i = 0; i < mat1.length; i++) {
+            for (int j = 0; j < mat1[0].length; j++) {
+                sum[i][j] = mat1[i][j] + mat2[i][j];
+            }
+        }
+        return sum;
+    }
+    /*Restituire la somma di due matrici*/
+    public static int[][] matrixSum(int[][] mat1, int[][] mat2){
+        if(mat1.length != mat2.length || mat1[0].length != mat2[0].length){
+            throw new IllegalArgumentException("Le matrici devono avere la stessa dimensione");
+        }
+        int[][] sum = new int[mat1.length][mat1[0].length];
+        for (int i = 0; i < mat1.length; i++) {
+            for (int j = 0; j < mat1[0].length; j++) {
+                sum[i][j] = mat1[i][j] + mat2[i][j];
+            }
+        }
+        return sum;
     }
 }
