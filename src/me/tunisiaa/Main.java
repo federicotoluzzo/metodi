@@ -888,16 +888,13 @@ del primo vettore.*/
         return sum;
     }
     /*Restituire la somma di due matrici*/
-    public static int[][] matrixSum(int[][] mat1, int[][] mat2){
-        if(mat1.length != mat2.length || mat1[0].length != mat2[0].length){
-            throw new IllegalArgumentException("Le matrici devono avere la stessa dimensione");
-        }
-        int[][] sum = new int[mat1.length][mat1[0].length];
-        for (int i = 0; i < mat1.length; i++) {
-            for (int j = 0; j < mat1[0].length; j++) {
-                sum[i][j] = mat1[i][j] + mat2[i][j];
+    public static int[][] matrixProduct(int[][] mat, int fact){
+        int[][] product = new int[mat.length][mat[0].length];
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                product[i][j] = mat[i][j] * fact;
             }
         }
-        return sum;
+        return product;
     }
 }
