@@ -989,7 +989,9 @@ del primo vettore.*/
         }
     }
 
-    /*Un'area vulcanica viene monitorata dalla Prote-
+    /*
+    Es 17
+    Un'area vulcanica viene monitorata dalla Prote-
     zione civile mediante alcuni sensori di tempe-
     ratura numerati (0, 1, 2, ...), che periodicamente
     forniscono una misura della temperatura del ter-
@@ -998,9 +1000,21 @@ del primo vettore.*/
     senta di inserire e memorizzare i valori di tem-
     peratura dei singoli sensori ogni volta che sono
     disponibili calcolandone i valori medio, minimo
-    e massimo; lo stesso programma deve inoltre
-    permettere di visualizzare la sequenza temporale
-    delle misure di temperatura di un singolo sensore
-    specificato dall'operatore e di calcolarne media,
-    valore minimo e valore massimo.*/
+    e massimo;.*/
+    
+    public static void temperature(int[][] data){
+        double[] average = new double[data.length];
+        double[] min = new double[data.length];
+        double[] max = new double[data.length];
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data[0].length; j++) {
+                if(data[i][j] > max){
+                    max[i] = data[i][j];
+                }
+                if(data[i][j] <min){
+                    min[i] = data[i][j];
+                }
+            }
+        }
+    }
 }
