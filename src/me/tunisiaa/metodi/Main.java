@@ -1,4 +1,4 @@
-package me.tunisiaa;
+package me.tunisiaa.metodi;
 
 import java.awt.*;
 import java.util.Arrays;
