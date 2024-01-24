@@ -1,11 +1,29 @@
 package me.tunisiaa.classi.es2;
 
 public class Computer {
+    enum operatingSystem{
+        ARCH,
+        MACOSX,
+        WINDOWS,
+        FEDORA,
+        UBUNTU,
+        ZORIN,
+        RASPBERRYPI
+    }
+    private operatingSystem os;
     private CPU cpu;
     private GPU gpu;
     private Storage storage;
     private RAM ram;
     private PSU psu;
+
+    public Computer(CPU cpu, GPU gpu, Storage storage, RAM ram, PSU psu){
+        this.cpu = cpu;
+        this.gpu = gpu;
+        this.storage = storage;
+        this.ram = ram;
+        this.psu = psu;
+    }
     class CPU{
         float clock;
         int cores;
