@@ -1002,7 +1002,7 @@ del primo vettore.*/
     disponibili calcolandone i valori medio, minimo
     e massimo;.*/
     
-    public static void temperature(int[][] data){
+    /*public static void temperature(int[][] data){
         double[] average = new double[data.length];
         int[] min = new int[data.length];
         int[] max = new int[data.length];
@@ -1016,5 +1016,5 @@ del primo vettore.*/
                 }
             }
         }
-    }
+    }*/
 }
