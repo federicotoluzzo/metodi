@@ -1004,14 +1004,14 @@ del primo vettore.*/
     
     public static void temperature(int[][] data){
         double[] average = new double[data.length];
-        double[] min = new double[data.length];
-        double[] max = new double[data.length];
+        int[] min = new int[data.length];
+        int[] max = new int[data.length];
         for (int i = 0; i < data.length; i++) {
             for (int j = 0; j < data[0].length; j++) {
                 if(data[i][j] > max){
                     max[i] = data[i][j];
                 }
-                if(data[i][j] <min){
+                if(data[i][j] < min){
                     min[i] = data[i][j];
                 }
             }
