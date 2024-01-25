@@ -1017,4 +1017,82 @@ del primo vettore.*/
             }
         }
     }*/
+
+
+    // 1.Crea un programma che chieda all'utente di inserire 5 quadrati neri o bianchi (B per nero o W per bianco) uno alla volta e restituisca il numero totale di quadrati neri.
+
+    public static int countBlack(){
+        Scanner sc = new Scanner(System.in);
+        int black = 0;
+        for(int i = 0; i < 5; i++){
+            black += (sc.nextLine().charAt(0) == 'B') ? 1 : 0;
+        }
+        return black;
+    }
+
+    // 2.Crea un programma che chieda all'utente di inserire una serie di quadrati bianchi e neri in una riga di input (B per nero e W per bianco) e restituisca il numero di quadrati neri come output.
+
+    public static void printBlack(){
+        Scanner sc = new Scanner(System.in);
+        int black = 0;
+        for(int i = 0; i < 5; i++){
+            black += (sc.nextLine().charAt(0) == 'B') ? 1 : 0;
+        }
+        System.out.println(black);;
+    }
+
+    // 3.Crea un programma che chieda all'utente di inserire un numero e controlli se il numero è pari o dispari.
+
+    public static boolean isEven(){
+        Scanner sc = new Scanner(System.in);
+        return sc.nextInt() % 2 == 0;
+    }
+
+    // 4.Crea un programma che chieda all'utente di inserire un numero e controlli se il numero è pari o dispari. Dovresti farlo continuando a sottrarre 2 dal tuo numero finché non diventa 0 o 1 (cioè se è 0 allora il numero è pari e se è 1 il numero è dispari). Assicurati che il tuo programma funzioni anche con i numeri negativi.
+
+    public static boolean isStillEven(){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n>0){
+            while(n > 1){
+                n -= 2;
+            }
+            return n == 0;
+        }else{
+            while(n < -1){
+                n += 2;
+            }
+            return n == 0;
+        }
+    }
+
+    // 5.Scrivi un programma che chieda all'utente di inserire una fila di carte bianche e nere e controlli se c'è un errore di parità in quella riga (cioè dovresti controllare se c'è un numero dispari di quadrati neri in quella riga).
+
+    public static boolean checkParity(){
+        Scanner sc = new Scanner(System.in);
+        char[] cards = sc.nextLine().replace(" ", "").toCharArray();
+        int black = 0;
+        for (char card : cards) {
+            black += (sc.nextLine().charAt(0) == 'B') ? 1 : 0;
+        }
+        return black % 2 == 0;
+    }
+
+    // 6.Scrivere un programma che chieda all'utente di inserire 6 righe di carte bianche e nere (6 carte in ogni riga) e controlli se c'è un errore di parità in una qualsiasi delle righe dopo aver inserito ciascuna riga.
+
+    public static void asdasdasd(){
+        for (int i = 0; i < 6; i++) {
+            System.out.println(!checkParity() ? "Tutto a posto" : "C'è un'errore!");
+        }
+    }
+
+    // 7.Scrivere un programma che chieda all'utente di inserire un numero qualsiasi di righe e controlli se c'è un errore di parità in una qualsiasi delle righe dopo aver inserito ciascuna riga.
+
+    public static void IIlIIllIlIIlIllIIIlltltlt(){
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        for (int i = 0; i < a; i++) {
+            System.out.println(!checkParity() ? "Tutto a posto" : "C'è un'errore!");
+        }
+    }
 }
