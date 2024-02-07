@@ -1,9 +1,11 @@
 package me.tunisiaa.classi.es3;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Group {
     private ArrayList<Person> group;
+    private HashSet<String> codes;
 
     public Group(){
         group = new ArrayList<Person>();
@@ -15,7 +17,12 @@ public class Group {
      * @param  person una persona
      */
     public void addPerson(Person person){
-        this.group.add(person);
+        if(!codes.contains(person.getCode())){
+            this.group.add(person);
+            this.codes.add(person.getCode());
+        }else{
+            System.out.println("Esiste già una persona con quel codice fiscale. Non posso aggiungerne un'altra");
+        }
     }
 
     /**
@@ -40,11 +47,27 @@ public class Group {
         String[] info = data.split(" ");
         String name = info[0];
         String surname = info[1];
-        int age = Integer.parseInt(info[0]);
+        int age = Integer.parseInt(info[2]);
         String code = info[3];
         Person person = new Person(name, surname, age, code);
         this.group.add(person);
     }
+
+    public void removePerson(String code){
+        for(Person p : group){
+            if(p.getCode().equals(code)){
+                group.remove(p);
+                return;
+            }
+        }
+    }
+
+
+    /**
+     * Restituisce una persona se appartiene al gruppo, altrimenti null
+     *
+     * @param code codice fiscale della persona da cercare
+     */
 
     public Person getPerson(String code){
         for(Person p : group){
@@ -55,6 +78,10 @@ public class Group {
         return null;
     }
 
+
+    /**
+     * Restituisce una stringa contenente i dati di tutte le persone del gruppo, suddivise da linee di trattini
+     */
     public String toString(){
         String s = "";
         for(Person p : group){

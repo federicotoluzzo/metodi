@@ -13,6 +13,20 @@ public class Person {
         this.code = code;
     }
 
+    /**
+     * @param  data una stringa contenente tutti i dati della persona divisi da spazi
+     */
+    public Person(String data){
+        String[] info = data.split(" ");
+        name = info[0];
+        surname = info[1];
+        age = Integer.parseInt(info[2]);
+        code = info[3];
+    }
+
+    /**
+     * Restituisce una stringa contenente tutti i dati della persona suddivisi da \n.
+     */
     public String toString(){
         String s = "";
         s += String.format("Nome : %s %s\n", name, surname);
@@ -22,7 +36,6 @@ public class Person {
     }
 
     // getter e setter
-
 
     public String getName() {
         return name;
