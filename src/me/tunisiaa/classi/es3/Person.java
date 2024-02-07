@@ -1,23 +1,58 @@
 package me.tunisiaa.classi.es3;
 
 public class Person {
-    private String nome;
-    private String cognome;
-    private int eta;
-    private String codice;
+    private String name;
+    private String surname;
+    private int age;
+    private String code;
 
-    public Person(String nome, String cognome, int eta, String codice){
-        this.nome = nome;
-        this.cognome = cognome;
-        this.eta = eta;
-        this.codice = codice;
+    public Person(String name, String surname, int age, String code){
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.code = code;
     }
 
     public String toString(){
         String s = "";
-        s += String.format("Nome : %s %s\n", nome, cognome);
-        s += String.format("Età : %d\n", eta);
-        s += String.format("Codice Fiscale : %s\n", codice);
+        s += String.format("Nome : %s %s\n", name, surname);
+        s += String.format("Età : %d\n", age);
+        s += String.format("Codice Fiscale : %s\n", code);
         return s;
+    }
+
+    // getter e setter
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }
