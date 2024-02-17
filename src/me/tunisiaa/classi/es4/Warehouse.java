@@ -2,11 +2,11 @@ package me.tunisiaa.classi.es4;
 
 import java.util.HashSet;
 
-public class Storage {
+public class Warehouse {
     private HashSet<Item> items;
     private int id = 1;
 
-    public Storage(){
+    public Warehouse(){
         items = new HashSet<Item>();
     }
 

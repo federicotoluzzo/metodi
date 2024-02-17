@@ -1,15 +1,14 @@
 package me.tunisiaa.classi.es4;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Storage storage = new Storage();
+        Warehouse storage = new Warehouse();
         Scanner sc = new Scanner(System.in);
         while(true){
             printMenu();
-            switch(sc.nextInt()){
+            switch(Integer.parseInt(sc.nextLine())){
                 case 0 -> System.exit(0);
                 case 1 -> {
                     System.out.println("Scrivi i dati del tuo prodotto in questo modo : nome, descrizione, prezzo, quantità : ");
@@ -18,12 +17,19 @@ public class Main {
                 }
                 case 2 -> {
                     System.out.println("Scrivi il codice del prodotto da rimuovere.");
-                    System.out.println(storage.removeItem(sc.nextInt() ? "Prodotto rimosso con successo!" : "Non ci sono prodotti con quel codice."));
+                    System.out.println(storage.removeItem(sc.nextInt()) ? "Prodotto rimosso con successo!" : "Non ci sono prodotti con quel codice.");
                 }
                 case 3 -> {
                     System.out.println("Scrivi il codice del prodotto da modificare.");
                     int id = sc.nextInt();
-
+                    System.out.println("Vuoi modificare il prezzo (P) o la quantità (Q)?");
+                    if(sc.nextLine().charAt(0) == 'P'){
+                        System.out.println("Scrivi il nuovo prezzo del prodotto");
+                        System.out.println(storage.editItemPrice(id, Float.parseFloat(sc.nextLine())) ? "Prodotto modificato con successo!" : "Non ci sono prodotti con quel codice.");
+                    }else{
+                        System.out.println("Scrivi la nuova quantità del prodotto");
+                        System.out.println(storage.editItemQuantity(id, Integer.parseInt(sc.nextLine())) ? "Prodotto modificato con successo!" : "Non ci sono prodotti con quel codice.");
+                    }
                 }
                 case 4 -> {
                     System.out.println("Scrivi il codice del prodotto da visualizzare.");
