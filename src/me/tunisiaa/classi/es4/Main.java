@@ -14,12 +14,22 @@ public class Main {
                 case 1 -> {
                     System.out.println("Scrivi i dati del tuo prodotto in questo modo : nome, descrizione, prezzo, quantità : ");
                     String[] dati = sc.nextLine().split(", ");
-                    storage.addItem(dati[0], dati[1], dati[2], dati[3]);
-                };
-                case 2 -> System.exit(0);
-                case 3 -> System.exit(0);
-                case 4 -> System.exit(0);
-                case 5 -> System.exit(0);
+                    storage.addItem(dati[0], dati[1], Float.parseFloat(dati[2]), Integer.parseInt(dati[3]));
+                }
+                case 2 -> {
+                    System.out.println("Scrivi il codice del prodotto da rimuovere.");
+                    System.out.println(storage.removeItem(sc.nextInt() ? "Prodotto rimosso con successo!" : "Non ci sono prodotti con quel codice."));
+                }
+                case 3 -> {
+                    System.out.println("Scrivi il codice del prodotto da modificare.");
+                    int id = sc.nextInt();
+
+                }
+                case 4 -> {
+                    System.out.println("Scrivi il codice del prodotto da visualizzare.");
+                    System.out.println(storage.getItem(sc.nextInt()));
+                }
+                case 5 -> System.out.println(storage.toString());
             }
         }
     }
