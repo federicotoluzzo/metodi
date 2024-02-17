@@ -20,7 +20,7 @@ public class Item {
                              "Description : %s\n" +
                              "Price : %f\n" +
                              "Quantity : %d\n" +
-                             "ID : %d", name, description, price, quantity, id);
+                             "ID : %d\n", name, description, price, quantity, id);
     }
 
     public String getName() {

@@ -17,11 +17,11 @@ public class Main {
                 }
                 case 2 -> {
                     System.out.println("Scrivi il codice del prodotto da rimuovere.");
-                    System.out.println(storage.removeItem(sc.nextInt()) ? "Prodotto rimosso con successo!" : "Non ci sono prodotti con quel codice.");
+                    System.out.println(storage.removeItem(Integer.parseInt(sc.nextLine())) ? "Prodotto rimosso con successo!" : "Non ci sono prodotti con quel codice.");
                 }
                 case 3 -> {
                     System.out.println("Scrivi il codice del prodotto da modificare.");
-                    int id = sc.nextInt();
+                    int id = Integer.parseInt(sc.nextLine());
                     System.out.println("Vuoi modificare il prezzo (P) o la quantità (Q)?");
                     if(sc.nextLine().charAt(0) == 'P'){
                         System.out.println("Scrivi il nuovo prezzo del prodotto");
@@ -33,7 +33,7 @@ public class Main {
                 }
                 case 4 -> {
                     System.out.println("Scrivi il codice del prodotto da visualizzare.");
-                    System.out.println(storage.getItem(sc.nextInt()));
+                    System.out.println(storage.getItem(Integer.parseInt(sc.nextLine())));
                 }
                 case 5 -> System.out.println(storage.toString());
             }
