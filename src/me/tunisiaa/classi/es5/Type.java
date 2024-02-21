@@ -5,6 +5,7 @@ public class Type {
     private int id;
     private float basePrice;
     private boolean hasFlowers;
+    private int quantity;
 
     public Type(String name, float basePrice, boolean hasFlowers) {
         this.name = name;

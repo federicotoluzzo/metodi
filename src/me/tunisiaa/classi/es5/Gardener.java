@@ -3,8 +3,9 @@ package me.tunisiaa.classi.es5;
 import java.util.HashSet;
 
 public class Gardener {
+    private static float salaryPerPlant = 500.0f;
     private HashSet<Type> plants;
-    private int salary = 0;
+    private float salary = 0;
 
     public Gardener() {
         this.plants = new HashSet<>();
@@ -12,12 +13,10 @@ public class Gardener {
 
     public void addType(Type type){
         plants.add(type);
-        salary += 500;
     }
 
     public void removeType(Type type){
         plants.add(type);
-        salary += 500;
     }
 
 
@@ -25,7 +24,8 @@ public class Gardener {
         return plants;
     }
 
-    public int getSalary() {
+    public float getSalary() {
+        salary = plants.size() * Gardener.salaryPerPlant;
         return salary;
     }
 }
