@@ -53,4 +53,8 @@ public class Type {
     public void setSalaryBonus(float salaryBonus) {
         this.salaryBonus = salaryBonus;
     }
+
+    public String toString(){
+        return String.format("Name : ")
+    }
 }

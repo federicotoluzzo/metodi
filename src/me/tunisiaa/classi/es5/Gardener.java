@@ -48,4 +48,16 @@ public class Gardener {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
+    public String toString(){
+        String gardener = "";
+        gardener += String.format("Name : %s\n" +
+                                  "Surname : %s\n" +
+                                  "Base Salary : %s \n", name, surname, baseSalary);
+        gardener += "Plants : ";
+        for(Type type : plants){
+            gardener += type.getName();
+        }
+        return gardener + "\n";
+    }
 }
