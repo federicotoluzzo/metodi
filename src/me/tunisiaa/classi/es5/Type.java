@@ -7,6 +7,7 @@ public class Type {
     private boolean hasFlowers;
     private int quantity;
     private float salaryBonus;
+    private Gardener gardener;
 
     public Type(String name, float price, boolean hasFlowers) {
         this.name = name;
@@ -26,11 +27,11 @@ public class Type {
         return id;
     }
 
-    public float getprice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setprice(float price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
