@@ -36,4 +36,13 @@ public class Order {
         }
         return price;
     }
+
+    public String toString(){
+        String order = "";
+        for(Type type : plants.keySet()){
+            order += String.format("%s\t:\t%f\n", type.getName(), type.getPrice() * plants.get(type));
+        }
+        order += String.format("Total\t:\t%f\n", getOrderPrice());
+        return order;
+    }
 }

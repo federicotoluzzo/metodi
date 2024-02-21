@@ -3,6 +3,8 @@ package me.tunisiaa.classi.es5;
 import java.util.HashSet;
 
 public class Gardener {
+    private String name;
+    private String surname;
     private HashSet<Type> plants;
     private float baseSalary;
 
@@ -29,5 +31,21 @@ public class Gardener {
             salary += type.getSalaryBonus();
         }
         return salary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }
