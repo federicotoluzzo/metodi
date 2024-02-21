@@ -3,9 +3,8 @@ package me.tunisiaa.classi.es5;
 import java.util.HashSet;
 
 public class Gardener {
-    private static float salaryPerPlant = 500.0f;
     private HashSet<Type> plants;
-    private float salary = 0;
+    private float baseSalary;
 
     public Gardener() {
         this.plants = new HashSet<>();
@@ -25,7 +24,10 @@ public class Gardener {
     }
 
     public float getSalary() {
-        salary = plants.size() * Gardener.salaryPerPlant;
+        float salary = baseSalary;
+        for(Type type : plants){
+            salary += type.getSalaryBonus();
+        }
         return salary;
     }
 }
