@@ -2,7 +2,6 @@ package me.tunisiaa.classi.es5;
 
 public class Type {
     private String name;
-    private int id;
     private float price;
     private boolean hasFlowers;
     private int quantity;
@@ -21,10 +20,6 @@ public class Type {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public float getPrice() {
