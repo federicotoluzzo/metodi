@@ -7,9 +7,20 @@ public class Gardener {
     private String surname;
     private HashSet<Type> plants;
     private float baseSalary;
+    private int id;
+    private static int lastID = 0;
 
     public Gardener() {
         this.plants = new HashSet<>();
+        this.id = ++lastID;
+    }
+
+    public Gardener(String name, String surname, float baseSalary) {
+        this.name = name;
+        this.surname = surname;
+        this.baseSalary = baseSalary;
+        this.plants = new HashSet<>();
+        this.id = ++lastID;
     }
 
     public void addType(Type type){
@@ -47,6 +58,10 @@ public class Gardener {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public static int getLastID() {
+        return lastID;
     }
 
     public String toString(){
