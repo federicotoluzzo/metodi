@@ -51,9 +51,9 @@ public class Gardener {
 
     public String toString(){
         String gardener = "";
-        gardener += String.format("Name : %s\n" +
-                                  "Surname : %s\n" +
-                                  "Base Salary : %s \n", name, surname, baseSalary);
+        gardener += String.format("Name\t:\t%s\n" +
+                                  "Surname\t:\t%s\n" +
+                                  "Base Salary\t:\t%s\n", name, surname, baseSalary);
         gardener += "Plants : ";
         for(Type type : plants){
             gardener += type.getName();

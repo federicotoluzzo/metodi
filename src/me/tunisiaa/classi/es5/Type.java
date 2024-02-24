@@ -55,6 +55,10 @@ public class Type {
     }
 
     public String toString(){
-        return String.format("Name : ")
+        return String.format("Name\t:\t%s\n" +
+                             "Has Flowers\t:\t%b\n" +
+                             "Price\t:\t%f\n" +
+                             "Quantity\t:\t%d\n" +
+                             gardener.toString(), name, hasFlowers, price, quantity);
     }
 }
