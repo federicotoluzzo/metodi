@@ -7,30 +7,34 @@ import java.util.concurrent.TimeUnit;
 public class Gun extends Item {
     private int damage;
     private int maxAmmo;
-    private int speed; // supponiamo possa essere in millisecondi
+    private int cooldown; // supponiamo possa essere in millisecondi
     private int quickReloadDuration;
-    private int slowReloadDuration;
+    private int slowReloadDuration; // per ciascun proiettile
 
     private long lastUsed;
     private int availableAmmo;
 
-    public Gun(int damage, int maxAmmo, int speed, int quickReloadDuration, int slowReloadDuration) {
+    public Gun(int quantity, int damage, int maxAmmo, int cooldown, int quickReloadDuration, int slowReloadDuration) {
+        super("Gun", quantity);
+        this.quantity = quantity;
         this.damage = damage;
         this.maxAmmo = maxAmmo;
-        this.speed = speed;
+        this.cooldown = cooldown;
         this.quickReloadDuration = quickReloadDuration;
         this.slowReloadDuration = slowReloadDuration;
 
         availableAmmo = 0;
     }
+
     // override del costruttore
     public Gun(){
+        super();
         availableAmmo = 0;
     }
 
     @Override
     public void use(){
-        if(System.currentTimeMillis() - lastUsed >= speed){
+        if(System.currentTimeMillis() - lastUsed >= cooldown){
             System.out.println("BANG");
             availableAmmo--;
             // enemy.setHP(enemy.getHP() - damage);
@@ -48,16 +52,22 @@ public class Gun extends Item {
         // player.setAmmo(player.getAmmo() - maxAmmo);
         // non c'è una classe player quindi dobbiamo affidarci all'immaginazione
         availableAmmo = maxAmmo;
+        System.out.println("Reloaded");
     }
 
     public void slowReload(){ // equivalente di inserire ogni proiettile singolarmente
-        try {
-            TimeUnit.MILLISECONDS.sleep(slowReloadDuration);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        System.out.println("Started to slowly reload");
+        while(availableAmmo < maxAmmo){
+            try {
+                TimeUnit.MILLISECONDS.sleep(slowReloadDuration);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            // player.setAmmo(player.getAmmo() - availableAmmo);
+            availableAmmo++;
+            System.out.println("Added one bullet : " + availableAmmo + "/" + maxAmmo);
         }
-        // player.setAmmo(player.getAmmo() - availableAmmo);
-        availableAmmo = maxAmmo;
+        System.out.println("Finished slowly reloading");
     }
 
     @Override
@@ -85,11 +95,11 @@ public class Gun extends Item {
     }
 
     public int getSpeed() {
-        return speed;
+        return cooldown;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
+    public void setSpeed(int cooldown) {
+        this.cooldown = cooldown;
     }
 
     public int getQuickReloadDuration() {
