@@ -1,13 +1,13 @@
 package com.federicotoluzzo.classi.es4;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class Warehouse {
-    private HashSet<Item> items;
+    private ArrayList<Item> items;
     private int id = 1;
 
     public Warehouse(){
-        items = new HashSet<Item>();
+        items = new ArrayList<Item>();
     }
 
     public void addItem(String name, String description, float price, int quantity){
