@@ -3,9 +3,11 @@ package com.federicotoluzzo.classi.es9.kotlin
 import java.awt.Color
 import java.awt.Component
 import java.awt.Font
+import java.awt.event.ActionEvent
+import java.awt.event.ActionListener
 import javax.swing.*
 
-class WinnerScreen(score: Int, bestScore: Int) : JPanel() {
+class WinnerScreen(game: Window, score: Int, bestScore: Int) : JPanel() {
     val winnerLabel = JLabel("You won!")
     val scoreLabel = JLabel()
     val bestScoreLabel = JLabel()
@@ -31,7 +33,7 @@ class WinnerScreen(score: Int, bestScore: Int) : JPanel() {
         bestScoreLabel.alignmentX = Component.CENTER_ALIGNMENT
 
         rematchButton.addActionListener {
-
+            game.contentPane = game.lobby
         }
 
         add(winnerLabel)
