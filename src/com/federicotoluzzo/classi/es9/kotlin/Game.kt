@@ -5,6 +5,6 @@ import javax.swing.*
 class Game() : JPanel() {
 
     init {
-        JFrame("Hangman")
+
     }
 }

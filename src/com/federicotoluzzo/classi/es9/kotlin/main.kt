@@ -1,6 +1,10 @@
 package com.federicotoluzzo.classi.es9.kotlin
 
+import javax.swing.JFrame
+
 fun main(args: Array<String>) {
-    var score = 4
-    println("your score is $score asd")
+    val jf = JFrame("Hangman")
+    jf.contentPane = WinnerScreen(420)
+    jf.pack()
+    jf.isVisible = true
 }
