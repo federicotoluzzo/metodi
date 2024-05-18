@@ -14,6 +14,4 @@ class Seller {
         seller += "Revenue : $revenue\n"
         return seller
     }
-
-
 }
