@@ -8,11 +8,15 @@ class Fair {
     }
 
     fun removeSeller(id:Int) {
-        sellers.remove(seller)
+        for (seller in sellers) {
+            if (seller.id == id) {
+                sellers.remove(seller)
+            }
+        }
     }
 
     fun editSeller(id:Int) {
-        sellers.add(seller)
+        println("TODO: add edit seller with id: $id")
     }
 
     fun getSellers():String {
