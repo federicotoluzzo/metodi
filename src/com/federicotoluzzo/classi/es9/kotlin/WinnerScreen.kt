@@ -34,6 +34,7 @@ class WinnerScreen(game: Window, score: Int, bestScore: Int) : JPanel() {
 
         rematchButton.addActionListener {
             game.contentPane = game.lobby
+            game.pack()
         }
 
         add(winnerLabel)

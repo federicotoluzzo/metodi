@@ -3,8 +3,6 @@ package com.federicotoluzzo.classi.es9.kotlin
 import java.awt.Color
 import java.awt.Component
 import java.awt.Font
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
 import javax.swing.*
 
 class LoserScreen(game: Window, bestScore: Int) : JPanel() {
@@ -29,6 +27,7 @@ class LoserScreen(game: Window, bestScore: Int) : JPanel() {
 
         rematchButton.addActionListener {
             game.contentPane = game.lobby
+            game.pack()
         }
 
         add(loserLabel)
