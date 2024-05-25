@@ -39,7 +39,7 @@ class Game(game : Window) : JPanel() {
     fun hiddenText() : String {
         var text = ""
         for (character in phrase){
-            text += if (!character.isLetter() || showedCharacters.contains(character.uppercase()))  character else "-"
+            text += if (character !in 'a'..'z' || showedCharacters.contains(character.uppercase()))  character else "-"
         }
         return text
     }
