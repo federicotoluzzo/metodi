@@ -4,7 +4,7 @@ import javax.swing.JFrame
 
 fun main(args: Array<String>) {
     val jf = JFrame("Hangman")
-    jf.contentPane = WinnerScreen(69, 420)
+    jf.contentPane = WinnerScreen(Window(), 69, 420)
     jf.pack()
     jf.isVisible = true
 }

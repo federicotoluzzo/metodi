@@ -1,17 +1,24 @@
 package com.federicotoluzzo.classi.es8;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
-class Fair {
+class Fair extends JPanel {
     ArrayList<Seller> sellers = new ArrayList<>();
+
+    public Fair() {
+        setBackground(new Color(0xBBBBBB));
+    }
 
     void addSeller(Seller seller) {
         sellers.add(seller);
+        add(seller);
     }
 
     public void removeSeller(int id) {
         for (Seller seller : sellers) {
-            if (seller.id == id) {
+            if (seller.getId() == id) {
                 sellers.remove(seller);
             }
         }
