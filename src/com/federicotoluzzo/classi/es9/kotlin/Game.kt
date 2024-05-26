@@ -31,14 +31,14 @@ class Game(game : Window) : JPanel() {
         submitButton.addActionListener {
             if(guess.text.isNotEmpty()) {
                 if(guess.text.lowercase() == phrase.lowercase()) {
-                    game.winnerScreen = WinnerScreen(game, game.bestScore, tries)
+                    game.winnerScreen.scoreLabel.text = tries.toString()
                     game.contentPane = game.winnerScreen
                 }
             } else {
                 showedCharacters.add(choice.selectedItem.toString())
                 choice.removeItem(choice.selectedItem)
             }
-
+            tries++
             label.text = hiddenText()
         }
 
