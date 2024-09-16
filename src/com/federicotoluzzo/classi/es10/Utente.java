@@ -7,12 +7,25 @@ public class Utente {
     private String codiceFiscale;
     private Abbonamento abbonamento;
 
+    /**
+     *
+     * @param nome nome dell'utente
+     * @param cognome cognome dell'utente
+     * @param codiceFiscale codice fiscale dell'utente
+     * @param abbonamento tipo di abbonamento dell'utente
+     */
+
     public Utente(String nome, String cognome, String codiceFiscale, Abbonamento abbonamento) {
         this.nome = nome;
         this.cognome = cognome;
         this.codiceFiscale = codiceFiscale;
         this.abbonamento = abbonamento;
     }
+
+    /**
+     *
+     * @return tutti i dati dell'utente in forma di stringa formattata
+     */
 
     public String toString() {
         String res = "Nome: " + nome + "\n";
