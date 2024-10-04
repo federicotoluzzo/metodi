@@ -7,10 +7,10 @@ public class Main {
         ArrayList<Integer> ArrayList;
         ArrayList<Integer> a = ArrayList<>(new int[]{3, 1, 2, 6, 4, 5, 9, 10, 8});
         System.out.println(a.toString());
-        System.out.println(quickSort(a, 0, a.length));
+        System.out.println(quickSort(a));
     }
 
-    public static int[] quickSort(int[] arr) {
+    public static int[] quickSort(ArrayList<Integer> arr) {
         if(arr.length == 0) return arr;
         
         int pivot = arr[0];
