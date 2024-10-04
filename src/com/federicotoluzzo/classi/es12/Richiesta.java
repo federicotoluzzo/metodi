@@ -22,7 +22,7 @@ public class Richiesta {
     }
 
     public void stampa(){
-        System.out.printf("\tNome:\t%s\n\tCognome:\t%s\n\tTipo richiesta:\t%s\t\nData:\t%s\n", nome, cognome, tipoRichiesta, new Date(data));
+        System.out.printf("\tNome:\t%s\n\tCognome:\t%s\n\tTipo richiesta:\t%s\n\tData:\t%s\n", nome, cognome, tipoRichiesta, new Date(data));
     }
 
     public String getNome() {

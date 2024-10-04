@@ -46,3 +46,4 @@ public class Libro {
 //Inoltre aggiungere un attributo nMazElementi.
 //(La Pila è LIMITATA).
 //I metodi sono: inserimento, estrazione e la stampa.
+*/

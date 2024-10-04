@@ -1,3 +1,4 @@
+/*
 package com.federicotoluzzo.classi.es11;
 
 import com.federicotoluzzo.classi.es10.Palestra;
@@ -27,9 +28,11 @@ public class CLI {
         pl = new PilaLibri(0);
     }
 
-    /**
+    */
+/**
      * mostra le opzioni e sceglie correttamente gli input
-     */
+     *//*
+
 
     public void start(){
         while(true){
@@ -49,10 +52,13 @@ public class CLI {
         }
     }
 
-    /**
+    */
+/**
      * chiede nella riga di comando i dati e aggiunge un'utente con essi alla palestra
-     */
-    private void aggiungiUtente(){
+     *//*
+
+    */
+/*private void aggiungiUtente(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Scrivi il nome e il cognome dell'utente da aggiungere, separati da uno spazio : ");
         String nome = sc.nextLine();
@@ -74,38 +80,44 @@ public class CLI {
 
 
         palestra.aggiungi(new Utente(nome.split(" ")[0], nome.split(" ")[1], codiceFiscale, abbonamento));
-    }
+    }*//*
 
-    /**
+
+    */
+/**
      * chiede nella riga di comando un codice fiscale e permette di modificare l'abbonamento dell'utente
-     */
+     *//*
+
 
     private void modificaAbbonamento(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Scrivi il codice fiscale dell'utente di cui modificare l'abbonamento : ");
         String codiceFiscale = sc.nextLine();
-        Palestra.Abbonamento abbonamento = null;
+        //Palestra.Abbonamento abbonamento = null;
         do{
             System.out.println("Scrivi l'abbonamento con cui sostituire quello precedente : ");
             String tipo = sc.nextLine();
             switch (tipo.toLowerCase()) {
-                case "gold" -> abbonamento = Palestra.Abbonamento.GOLD;
-                case "silver" -> abbonamento = Palestra.Abbonamento.SILVER;
-                case "bronze" -> abbonamento = Palestra.Abbonamento.BRONZE;
-                case "prova gratuita" -> abbonamento = Palestra.Abbonamento.TRIAL;
+                //ase "gold" -> abbonamento = Palestra.Abbonamento.GOLD;
+                //ase "silver" -> abbonamento = Palestra.Abbonamento.SILVER;
+                //ase "bronze" -> abbonamento = Palestra.Abbonamento.BRONZE;
+                //ase "prova gratuita" -> abbonamento = Palestra.Abbonamento.TRIAL;
                 default -> System.out.println("Errore : Tipo di abbonamento non valido");
             }
-        } while (abbonamento == null);
-        if(!palestra.modificaAbbonamento(codiceFiscale, abbonamento)){
+        } //while (abbonamento == null);
+        //if(!palestra.modificaAbbonamento(codiceFiscale, abbonamento)){
             System.out.println("L'utente non è stato modificato perchè non esiste.");
         }
     }
 
-    /**
+    */
+/**
      * chiede un codice fiscale e permette di modificare il nome dell'utente
-     */
+     *//*
 
-    private void modificaNomeCognome(){
+
+    */
+/*private void modificaNomeCognome(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Scrivi il codice fiscale dell'utente di cui modificare il nome e cognome : ");
         String codiceFiscale = sc.nextLine();
@@ -114,38 +126,52 @@ public class CLI {
         if(!palestra.modificaNomeCognome(codiceFiscale, nomeCognome)){
             System.out.println("L'utente non è stato modificato perchè non esiste.");
         }
-    }
+    }*//*
 
-    /**
+
+    */
+/**
      * chiede un codice fiscale nella riga di comando e permette di eliminare un'utente
-     */
+     *//*
 
-    public void elimina(){
+
+   */
+/* public void elimina(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Scrivi il codice fiscale dell'utente da eliminare : ");
         String codiceFiscale = sc.nextLine();
         if(!palestra.elimina(codiceFiscale)){
             System.out.println("L'utente non esiste.");
         }
-    }
+    }*//*
 
-    /**
+
+    */
+/**
      * chiede un codice fiscale e stampa i dati dell'utente al terminale
-     */
+     *//*
 
+*/
+/*
     public void stampaUtente(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Scrivi il codice fiscale dell'utente da visualizzare : ");
         String codiceFiscale = sc.nextLine();
         System.out.println(palestra.stringaUtente(codiceFiscale));
-    }
+    }*//*
 
-    /**
+
+    */
+/**
      * stampa tutti gli utenti
-     */
+     *//*
 
-    public void stampaTutto(){
+
+  */
+/*  public void stampaTutto(){
         System.out.println(palestra.stringaUtenti());
-    }
+    }*//*
+
 
 }
+*/

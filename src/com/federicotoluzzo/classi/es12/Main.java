@@ -2,7 +2,8 @@ package com.federicotoluzzo.classi.es12;
 
 public class Main {
     public static void main(String[] args) {
-
+        CLI cli = new CLI();
+        cli.start();
     }
 }
 

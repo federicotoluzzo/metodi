@@ -1,4 +1,4 @@
-package com.federicotoluzzo.classi.quickSort;
+/*package com.federicotoluzzo.classi.quickSort;
 
 import java.util.ArrayList;
 
@@ -21,4 +21,4 @@ public class Main {
             }
         }
     }
-}
+}*/
