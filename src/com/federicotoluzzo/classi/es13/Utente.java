@@ -6,6 +6,8 @@ public class Utente {
     private String cognome;
     private String codiceFiscale;
 
+    private Utente prossimoUtente;
+
     /**
      *
      * @param nome nome dell'utente
@@ -54,6 +56,14 @@ public class Utente {
 
     public void setCodiceFiscale(String codiceFiscale) {
         this.codiceFiscale = codiceFiscale;
+    }
+
+    public Utente getProssimoUtente() {
+        return prossimoUtente;
+    }
+
+    public void setProssimoUtente(Utente prossimoUtente) {
+        this.prossimoUtente = prossimoUtente;
     }
 
     /*    I metodi della classe Utente sono:

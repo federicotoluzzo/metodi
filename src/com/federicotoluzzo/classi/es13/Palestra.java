@@ -9,19 +9,22 @@ public class Palestra{
         BRONZE,
         TRIAL
     }
-    private ArrayList<Utente> utenti;
+    private Utente primo;
 
     public Palestra(){
         utenti = new ArrayList<>();
     }
 
     public int ricerca(String cf){
-        for(int i = 1){
+        int pos = 0;
+        Utente u = primo;
+        while(u.getProssimoUtente() != null){
             if(u.getCodiceFiscale() == cf){
-                return u;
+                return pos;
             }
+            pos++;
         }
-        return null;
+        return -1;
     }
 
     /**
@@ -31,12 +34,11 @@ public class Palestra{
      */
 
     public boolean aggiungi(Utente utente){
-        for(Utente u : utenti){
-            if(u.getCodiceFiscale() == utente.getCodiceFiscale()){
-                return false;
-            }
+        Utente u = primo;
+        while(u.getProssimoUtente() != null){
+            u = u.getProssimoUtente();
         }
-        utenti.add(utente);
+        u.setProssimoUtente(utente);
         return true;
     }
 
@@ -48,6 +50,8 @@ public class Palestra{
      */
 
     public boolean modificaNomeCognome(String cf, String nuovoNome){
+
+        while()
         for(Utente u : utenti){
             if(u.getCodiceFiscale() == cf){
                 u.setNome(nuovoNome.split(" ")[0]);
