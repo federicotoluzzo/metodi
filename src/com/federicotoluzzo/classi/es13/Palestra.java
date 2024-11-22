@@ -51,7 +51,7 @@ public class Palestra{
 
     public boolean modificaNomeCognome(String cf, String nuovoNome){
 
-        while()
+        while(true)
         for(Utente u : utenti){
             if(u.getCodiceFiscale() == cf){
                 u.setNome(nuovoNome.split(" ")[0]);
