@@ -48,6 +48,7 @@ public class Tree {
         values.addAll(visitaPreordine1(n.getRight()));
         return values;
     }
+
     public NodoLista visitaOdine2(Node n){
         NodoLista values = new NodoLista();
         if(n == null){
@@ -58,6 +59,7 @@ public class Tree {
         values.addAll(visitaPreordine1(n.getRight()));
         return values;
     }
+
     public NodoLista visitaPostordine2(Node n){
         NodoLista values = new NodoLista();
         if(n == null){
@@ -67,5 +69,9 @@ public class Tree {
         values.addAll(visitaPreordine1(n.getRight()));
         values.addValue(n.getValue());
         return values;
+    }
+
+    public void costruisci(Integer[] v){
+
     }
 }

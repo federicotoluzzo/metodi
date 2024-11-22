@@ -30,7 +30,7 @@ public class NodoLista {
     }
 
     public void addAll(NodoLista lista){
-
+        while(lista.getHead() != null){}
     }
 
     @Override
@@ -42,5 +42,9 @@ public class NodoLista {
         }
         res += "]";
         return res;
+    }
+
+    public Node getHead() {
+        return head;
     }
 }
