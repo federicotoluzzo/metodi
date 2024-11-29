@@ -1,6 +1,7 @@
 package com.federicotoluzzo.classi.alberi;
 
 import java.util.ArrayList;
+import java.util.Queue;
 
 public class Tree {
     private Node root;
@@ -71,7 +72,49 @@ public class Tree {
         return values;
     }
 
-    public void costruisci(Integer[] v){
+    public static Node crea2(Integer[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
 
+        Node radice = new Node(nums[0]);
+        ArrayList<Node> queue = new ArrayList<>();
+        queue.add(radice);
+        int i = 1;
+        while (i < nums.length) {
+            Node currentNode = queue.remove(0);
+            if (i < nums.length) {
+                currentNode.setLeft(new Node(nums[i++]));
+                queue.add(currentNode.getLeft());
+            }
+            if (i < nums.length) {
+                currentNode.setRight(new Node(nums[i++]));
+                queue.add(currentNode.getRight());
+            }
+        }
+        return radice;
+    }
+
+    public static ArrayList<Integer> creaArray(Integer[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+
+        Node radice = new Node(nums[0]);
+        ArrayList<Node> queue = new ArrayList<>();
+        queue.add(radice);
+        int i = 1;
+        while (i < nums.length) {
+            Node currentNode = queue.remove(0);
+            if (i < nums.length) {
+                currentNode.setLeft(new Node(nums[i++]));
+                queue.add(currentNode.getLeft());
+            }
+            if (i < nums.length) {
+                currentNode.setRight(new Node(nums[i++]));
+                queue.add(currentNode.getRight());
+            }
+        }
+        return radice;
     }
 }
