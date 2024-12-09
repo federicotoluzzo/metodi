@@ -8,7 +8,7 @@ public class GUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
-        getContentPane().add();
+        getContentPane();
         pack();
     }
 }

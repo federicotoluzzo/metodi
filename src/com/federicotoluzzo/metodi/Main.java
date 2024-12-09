@@ -239,7 +239,8 @@ public class Main {
     come parametro il periodo con cui deve oscillare.*/
 
     public static double pendolo(double p){
-        return p*p*Math.TAU*Math.TAU/9.8;
+        //return p*p*Math.TAU*Math.TAU/9.8;
+        return 0;
     }
 
     /*Scrivere una funzione C++ che, a partire dalle

@@ -1,15 +1,27 @@
 package com.federicotoluzzo.classi.alberi;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        Tree t = new Tree(new Node(1));
-        t.getRoot().setLeft(new Node(1));
-        t.getRoot().setRight(new Node(2));
-        t.getRoot().getRight().setLeft(new Node(3));
-        t.getRoot().getRight().setRight(new Node(5));
-        t.getRoot().getLeft().setLeft(new Node(8));
-        t.getRoot().getLeft().setRight(new Node(13));
+        BST tree = new BST();
 
-        System.out.println(t.getValuesDFS(t.getRoot()));
+        long start = System.nanoTime();
+        for (int i = 0; i < 100; i++) {
+            fillTree(tree, 1000);
+        }
+        System.out.printf("Average time elapsed = %sns\n", (System.nanoTime() - start) / 100);
+
+
     }
+
+    public static void fillTree(BST tree, int len){
+        tree.root = null;
+        Random r = new Random();
+        for(int i = 0; i < len; i++){
+            tree.add(tree.root, r.nextInt());
+        }
+    }
+
+    public static void fillArray(A)
 }

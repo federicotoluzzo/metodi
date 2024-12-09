@@ -39,7 +39,7 @@ public class Tree {
         return values;
     }
 
-    public NodoLista visitaPreordine2(Node n){
+    /*public NodoLista visitaPreordine2(Node n){
         NodoLista values = new NodoLista();
         if(n == null){
             return values;
@@ -70,7 +70,7 @@ public class Tree {
         values.addAll(visitaPreordine1(n.getRight()));
         values.addValue(n.getValue());
         return values;
-    }
+    }*/
 
     public static Node crea2(Integer[] nums) {
         if (nums == null || nums.length == 0) {
@@ -95,14 +95,9 @@ public class Tree {
         return radice;
     }
 
-    public static ArrayList<Integer> creaArray(Integer[] nums) {
-        if (nums == null || nums.length == 0) {
-            return null;
-        }
+    /*public ArrayList<Integer> creaArray() {
+        ArrayList<Integer> values = new ArrayList<>();
 
-        Node radice = new Node(nums[0]);
-        ArrayList<Node> queue = new ArrayList<>();
-        queue.add(radice);
         int i = 1;
         while (i < nums.length) {
             Node currentNode = queue.remove(0);
@@ -115,6 +110,6 @@ public class Tree {
                 queue.add(currentNode.getRight());
             }
         }
-        return radice;
-    }
+        return values;
+    }*/
 }
