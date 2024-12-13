@@ -26,8 +26,8 @@ public class BST {
                 return root;
             }else if(root.getValue() > val){
                 return get(root.getLeft(), val);
-            } else if (root.getValue() < val){
-                return get(root.getLeft(), val);
+            } else {
+                return get(root.getRight(), val);
             }
         }
         return root;
