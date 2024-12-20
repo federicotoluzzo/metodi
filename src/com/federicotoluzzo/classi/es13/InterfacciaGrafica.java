@@ -69,7 +69,7 @@ public class InterfacciaGrafica {
         } while (abbonamento == null);
 
 
-        palestra.aggiungi(new Utente(nome.split(" ")[0], nome.split(" ")[1], codiceFiscale, abbonamento));
+//        palestra.aggiungi(new Utente(nome.split(" ")[0], nome.split(" ")[1], codiceFiscale, abbonamento));
     }
 
     /**
@@ -92,9 +92,9 @@ public class InterfacciaGrafica {
                 default -> System.out.println("Errore : Tipo di abbonamento non valido");
             }
         } while (abbonamento == null);
-        if(!palestra.modificaAbbonamento(codiceFiscale, abbonamento)){
+        /*if(!palestra.modificaAbbonamento(codiceFiscale, abbonamento)){
             System.out.println("L'utente non è stato modificato perchè non esiste.");
-        }
+        }*/
     }
 
     /**

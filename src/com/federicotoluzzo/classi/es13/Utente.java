@@ -1,5 +1,5 @@
 package com.federicotoluzzo.classi.es13;
-import com.federicotoluzzo.classi.es10.Palestra.Abbonamento;
+//import com.federicotoluzzo.classi.es10.Palestra.Abbonamento;
 
 public class Utente {
     private String nome;
