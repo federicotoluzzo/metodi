@@ -65,7 +65,7 @@ public class Grafo {
                 }
             }
         }
-        System.out.println("Distanza tra %d e %d = %d", start, end, );
+        System.out.printf("Distanza tra %d e %d = %d\n", start, end, pesi[end]);
     }
 
     public void dijkstra (int n){
