@@ -84,7 +84,7 @@ public class Irlanda {
             }
         }
 
-        System.out.printf("Distanza tra %s e %s : %d\n", città[start], città[end], pesi[end]);
+        System.out.printf("Distanza tra %s e %s : %dkm\n", città[start], città[end], pesi[end]);
 
         int padre = end;
         Stack<String> path = new Stack<>();
