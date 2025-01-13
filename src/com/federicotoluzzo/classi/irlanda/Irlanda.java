@@ -1,15 +1,17 @@
 package com.federicotoluzzo.classi.irlanda;
 
+import java.util.Stack;
+
 public class Irlanda {
     private String[] città = {"Dublino", "Belfast", "Galway", "Cork", "Waterford", "Londonderry", "Limerick"};
     private int[][] distanze = {
-            {0, 140, 186, 220, 134, 0, 176},
-            {140, 0, 0, 0, 0, 100, 0},
-            {186, 0, 0, 0, 0, 0, 0},
-            {220, 0, 0, 0, 0, 0, 0},
-            {134, 0, 0, 0, 0, 0, 112},
-            {0, 100, 0, 0, 0, 0, 0},
-            {176, 0, 0, 0, 112, 0, 0}
+            {0, 168, 207, 253, 165, 0, 176},
+            {168, 0, 0, 0, 0, 113, 0},
+            {207, 0, 0, 0, 0, 0, 0},
+            {253, 0, 0, 0, 0, 0, 99},
+            {165, 0, 0, 0, 0, 0, 0},
+            {0, 113, 0, 0, 0, 0, 0},
+            {176, 0, 0, 99, 0, 0, 0}
     };
 
     public static void main(String[] args) {
@@ -60,9 +62,14 @@ public class Irlanda {
             System.out.println("predecessore-padre del nodo " + i + " nell'ALB dei cammini minimi è il nodo: " + u[i]);
         }
         int padre = u[end];
+        Stack<String> path = new Stack<>();
         while(padre != -1){
+            path.push(città[padre]);
             distanza += pesi[padre];
             padre = u[padre];
+        }
+        while(!path.isEmpty()){
+            System.out.println(path.pop());
         }
 
         System.out.printf("distanza tra %s e %s : %d\n", città[start], città[end], distanza);
