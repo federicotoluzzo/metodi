@@ -1,5 +1,6 @@
 package com.federicotoluzzo.classi.irlanda;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.concurrent.TimeUnit;
@@ -23,10 +24,18 @@ public class Irlanda {
             for (int i = 0; i < ir.città.length; i++) {
                 System.out.printf("%s : %d\n", ir.città[i], i);
             }
-            System.out.println("Tra che città vuoi calcolare il percorso? Indica i numeri separati da uno spazio");
+            System.out.println("Tra che città vuoi calcolare il percorso? Indica i numeri separati da uno spazio. Per uscire, digitare qualsiasi altra cosa");
             String dati = sc.nextLine();
-            int start = Integer.parseInt(dati.split(" ")[0]);
-            int end = Integer.parseInt(dati.split(" ")[1]);
+            int start = -1;
+            int end = -1;
+            try{
+                start = Integer.parseInt(dati.split(" ")[0]);
+                end = Integer.parseInt(dati.split(" ")[1]);
+            } catch (Exception e){
+                System.out.println("Grazie per aver usato questo programma :)");
+                System.exit(0);
+            }
+
             System.out.println();
             ir.printDistance(start, end);
             try {
