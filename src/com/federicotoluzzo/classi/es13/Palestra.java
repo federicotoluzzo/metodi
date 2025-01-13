@@ -12,7 +12,7 @@ public class Palestra{
     private Utente primo;
 
     public Palestra(){
-        utenti = new ArrayList<>();
+        //utenti = new ArrayList<>();
     }
 
     public int ricerca(String cf){
@@ -52,13 +52,13 @@ public class Palestra{
     public boolean modificaNomeCognome(String cf, String nuovoNome){
 
         while(true)
-        for(Utente u : utenti){
+        /*for(Utente u : utenti){
             if(u.getCodiceFiscale() == cf){
                 u.setNome(nuovoNome.split(" ")[0]);
                 u.setCognome(nuovoNome.split(" ")[1]);
                 return true;
             }
-        }
+        }*/
         return false;
     }
 
@@ -69,12 +69,12 @@ public class Palestra{
      */
 
     public boolean elimina(String cf){
-        for(Utente u : utenti){
+        /*for(Utente u : utenti){
             if(u.getCodiceFiscale() == cf){
                 utenti.remove(u);
                 return true;
             }
-        }
+        }*/
         return false;
     }
 
@@ -85,11 +85,11 @@ public class Palestra{
      */
 
     public String stringaUtente(String cf){
-        for(Utente u : utenti){
+        /*for(Utente u : utenti){
             if(u.getCodiceFiscale() == cf){
                 System.out.println(u.toString());
             }
-        }
+        }*/
         return "Utente non trovato";
     }
 
@@ -100,9 +100,9 @@ public class Palestra{
 
     public String stringaUtenti(){
         String stringaUtenti = "";
-        for(Utente u : utenti){
+        /*for(Utente u : utenti){
             stringaUtenti += u.toString() + "\n\n";
-        }
+        }*/
         return stringaUtenti;
     }
 }
