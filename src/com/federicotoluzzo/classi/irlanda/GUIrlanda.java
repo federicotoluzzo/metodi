@@ -1,6 +1,9 @@
 package com.federicotoluzzo.classi.irlanda;
 
 import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.concurrent.TimeUnit;
@@ -19,9 +22,10 @@ public class GUIrlanda extends JFrame {
 
     public JComboBox start;
     public JComboBox end;
+    public JButton submit;
+    public Map map;
     public JLabel distance;
     public JLabel path;
-    public JButton submit;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -31,20 +35,43 @@ public class GUIrlanda extends JFrame {
 
         ir.start = new JComboBox(città);
         ir.end = new JComboBox(città);
+        ir.submit = new JButton("Submit");
+        ir.map = new Map(480);
+        ir.map.setPreferredSize(new Dimension(500, 500));
         ir.distance = new JLabel("Distance : ");
         ir.path = new JLabel("Path : ");
-        ir.submit = new JButton("Submit");
 
         ir.add(ir.start);
         ir.add(ir.end);
+        ir.add(ir.submit);
+        ir.add(ir.map);
         ir.add(ir.distance);
         ir.add(ir.path);
-        ir.add(ir.submit);
+
+        ir.setResizable(false);
 
         ir.submit.addActionListener(e -> {
             try{
-                ir.distance.setText("Distance : " + ir.getDistance(ir.start.getSelectedIndex(), ir.end.getSelectedIndex()));
-                ir.path.setText("Path : " + ir.getPath(ir.start.getSelectedIndex(), ir.end.getSelectedIndex()));
+                ir.distance.setText("Distance : " + ir.getDistance(ir.start.getSelectedIndex(), ir.end.getSelectedIndex()) + "km");
+                int[] path = ir.getPath(ir.start.getSelectedIndex(), ir.end.getSelectedIndex());
+                int padre = ir.end.getSelectedIndex();
+                Stack<String> pathStack = new Stack<>();
+                StringBuilder pathString = new StringBuilder();
+                ArrayList pathArrayList = new ArrayList();
+                pathString.append("Path : ");
+                while(padre != -1){
+                    pathStack.push(città[padre]);
+                    pathArrayList.add(padre);
+                    padre = path[padre];
+                }
+                pathString.append(pathStack.pop());
+                while(!pathStack.isEmpty()){
+                    pathString.append(" > ");
+                    pathString.append(pathStack.pop());
+                }
+                System.out.println(Arrays.asList(path).size());
+                ir.map.setPath(pathArrayList);
+                ir.path.setText(pathString.toString());
                 ir.pack();
             } catch (Exception ex){}
         });
@@ -89,7 +116,7 @@ public class GUIrlanda extends JFrame {
         return pesi[end];
     }
 
-    public String getPath(int start, int end){
+    public int[] getPath(int start, int end){
         String[] nodi = new String[this.distanze.length];
         int distanza = 0;
         int[] u = new int[this.distanze.length];  //vettore u
@@ -125,19 +152,6 @@ public class GUIrlanda extends JFrame {
             }
         }
 
-        int padre = end;
-        Stack<String> path = new Stack<>();
-        StringBuilder pathString = new StringBuilder();
-        while(padre != -1){
-            path.push(città[padre]);
-            padre = u[padre];
-        }
-        pathString.append(path.pop());
-        while(!path.isEmpty()){
-            pathString.append(" > ");
-            pathString.append(path.pop());
-        }
-        System.out.println();
-        return pathString.toString();
+        return u;
     }
 }

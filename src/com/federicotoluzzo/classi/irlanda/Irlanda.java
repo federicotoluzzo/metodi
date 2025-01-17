@@ -69,7 +69,7 @@ public class Irlanda {
                 if ((min == -1) && (nodi[i].equals("NV"))) {
                     min = i;
                 } else {
-                    if ((nodi[i].equals("NV"))&&(pesi[i] < pesi[min])) {
+                    if ((nodi[i].equals("NV")) && (pesi[i] < pesi[min])) {
                         min = i;
                     }
                 }
@@ -77,7 +77,7 @@ public class Irlanda {
             if (min == -1) {break;}
             nodi[min] = "V";
             for (int i = 0; i < distanze.length; i = i + 1) {
-                if ((distanze[min][i] != 0) && (nodi[i].equals("NV")) && (pesi[min] + distanze[min][i] < pesi[i])) {
+                if (distanze[min][i] != 0 && nodi[i].equals("NV") && (pesi[min] + distanze[min][i] < pesi[i])) {
                     pesi[i] = pesi[min] + distanze[min][i];
                     u[i]=min;
                 }
