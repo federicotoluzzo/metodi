@@ -1,0 +1,12 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+}
+p{
+    align-self: center;
+    margin: auto;
+    height: fit-content;
+}
