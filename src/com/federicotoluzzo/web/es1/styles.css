@@ -1,4 +1,8 @@
 body{
+    display: flex;
+    flex-direction: column;
+}
+.full{
     height: 100vh;
     display: flex;
     align-content: center;
@@ -9,4 +13,9 @@ p{
     align-self: center;
     margin: auto;
     height: fit-content;
+}
+#perspective{
+    background: #F00;
+    aspect-ratio: 1;
+    width: 300px;
 }
