@@ -14,8 +14,24 @@ p{
     margin: auto;
     height: fit-content;
 }
-#perspective{
+#perspective1{
+    position: relative;
+    top: 0;
     background: #F00;
+    aspect-ratio: 1;
+    width: 300px;
+}
+#perspective2{
+    position: relative;
+    top: -300px;
+    background: #F44;
+    aspect-ratio: 1;
+    width: 300px;
+}
+#perspective3{
+    position: relative;
+    top: -600px;
+    background: #F88;
     aspect-ratio: 1;
     width: 300px;
 }
